@@ -4,6 +4,9 @@ import { mainMenu } from './interactive/wizard.js';
 import { install } from './commands/install.js';
 import { list } from './commands/list.js';
 import { search } from './commands/search.js';
+import { update } from './commands/update.js';
+import { uninstall } from './commands/uninstall.js';
+import { check } from './commands/check.js';
 
 const args = process.argv.slice(2);
 const command = args[0];
@@ -40,9 +43,21 @@ async function main() {
       await search(keyword);
       break;
     }
+    case 'check':
+    case 'c':
+      await check();
+      break;
+    case 'update':
+    case 'u':
+      await update();
+      break;
+    case 'uninstall':
+    case 'un':
+      await uninstall();
+      break;
     default:
       console.log(`未知命令: ${command}`);
-      console.log('使用: fus [install|list|search]');
+      console.log('使用: fus [install|list|search|check|update|uninstall]');
       process.exit(1);
   }
 }
