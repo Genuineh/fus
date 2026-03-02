@@ -34,10 +34,10 @@ Claude Code 通用开发工具集插件项目
 - [x] update - 更新插件
 
 ### 开发中
-- [ ] search - 搜索插件
+- [ ] 无
 
 ### 待开发
-- [ ] search - 搜索可用插件
+- [ ] version - 查看/管理版本
 - [ ] version - 查看/管理版本
 - [ ] config - 插件配置管理
 - [ ] info - 查看插件详情

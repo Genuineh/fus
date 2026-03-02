@@ -3,6 +3,7 @@
 import { mainMenu } from './interactive/wizard.js';
 import { install } from './commands/install.js';
 import { list } from './commands/list.js';
+import { search } from './commands/search.js';
 
 const args = process.argv.slice(2);
 const command = args[0];
@@ -29,9 +30,19 @@ async function main() {
     case 'ls':
       await list();
       break;
+    case 'search':
+    case 's': {
+      const keyword = args[1] || '';
+      if (!keyword) {
+        console.log('请提供搜索关键词');
+        process.exit(1);
+      }
+      await search(keyword);
+      break;
+    }
     default:
       console.log(`未知命令: ${command}`);
-      console.log('使用: fus [install|list]');
+      console.log('使用: fus [install|list|search]');
       process.exit(1);
   }
 }

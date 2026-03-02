@@ -4,6 +4,7 @@ import { install } from '../commands/install.js';
 import { list } from '../commands/list.js';
 import { uninstall } from '../commands/uninstall.js';
 import { update } from '../commands/update.js';
+import { searchInteractive } from '../commands/search.js';
 
 export async function mainMenu(): Promise<void> {
   const { action } = await inquirer.prompt([
@@ -45,7 +46,7 @@ async function handleAction(action: string): Promise<void> {
       await uninstallWizard();
       break;
     case 'search':
-      console.log('搜索功能开发中...');
+      await searchWizard();
       break;
   }
 
@@ -128,6 +129,10 @@ async function listPlugins(): Promise<void> {
 
 async function uninstallWizard(): Promise<void> {
   await uninstall();
+}
+
+async function searchWizard(): Promise<void> {
+  await searchInteractive();
 }
 
 async function updateWizard(): Promise<void> {
