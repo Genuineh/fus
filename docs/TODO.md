@@ -13,7 +13,6 @@ Claude Code 通用开发工具集插件项目
 - [ ] 实现 MCP 服务器功能
 
 ### P2 - 中优先级 (CLI功能)
-- [ ] 实现 update 命令（更新插件）
 - [ ] 实现 search 命令（搜索插件）
 - [ ] 添加插件版本管理
 - [ ] 添加插件配置功能
@@ -32,9 +31,10 @@ Claude Code 通用开发工具集插件项目
 - [x] install - 安装插件（本地/NPM）
 - [x] list - 列出已安装插件
 - [x] uninstall - 删除插件
+- [x] update - 更新插件
 
 ### 开发中
-- [ ] update - 更新插件
+- [ ] search - 搜索插件
 
 ### 待开发
 - [ ] search - 搜索可用插件
@@ -52,4 +52,5 @@ Claude Code 通用开发工具集插件项目
 | 2026-03-02 | 创建 fus-core, fus-agent, fus-skills, fus-mcp 模块 | ✅ |
 | 2026-03-02 | 创建 fus-cli 基础框架 | ✅ |
 | 2026-03-02 | 实现 install/list/uninstall 命令 | ✅ |
+| 2026-03-02 | 实现 update 命令 | ✅ |
 | 2026-03-02 | 添加CLI使用文档 | ✅ |
