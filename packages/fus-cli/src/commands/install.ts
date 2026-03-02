@@ -37,6 +37,12 @@ async function installFromLocal(sourcePath: string, targetPath: string): Promise
   const pluginName = path.basename(resolvedPath);
   const destPath = path.join(targetPath, pluginName);
 
+  // 检查是否是自身子目录或相同目录
+  const resolvedDest = path.resolve(destPath);
+  if (resolvedPath.startsWith(resolvedDest) || resolvedPath === resolvedDest) {
+    throw new Error(`不能将目录安装到自身的子目录中: ${resolvedPath}`);
+  }
+
   // 复制文件
   await fs.mkdir(targetPath, { recursive: true });
   await fs.cp(resolvedPath, destPath, { recursive: true });
