@@ -18,7 +18,7 @@ export class TestSkill extends BaseSkill {
         return { success: false, message: '未找到测试命令，请在package.json中配置test脚本' };
       }
 
-      const result = await $([testCommand]);
+      const result = await $`${testCommand}`;
 
       const passed = result.exitCode === 0;
       return {

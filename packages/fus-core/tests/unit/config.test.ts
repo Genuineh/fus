@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { mergeConfig } from '../src/config/index.js';
+import { mergeConfig } from '../../src/config/index.js';
 
 describe('config', () => {
   it('should merge configs', () => {

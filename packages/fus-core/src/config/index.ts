@@ -20,9 +20,21 @@ export async function loadConfig(cwd: string = process.cwd()): Promise<FusConfig
 }
 
 export function mergeConfig(base: FusConfig, override: Partial<FusConfig>): FusConfig {
+  const mergedRules: Record<string, unknown> = { ...base.rules };
+
+  if (override.rules) {
+    for (const [key, value] of Object.entries(override.rules)) {
+      if (value && typeof value === 'object') {
+        mergedRules[key] = { ...(base.rules?.[key] as object), ...value };
+      } else {
+        mergedRules[key] = value;
+      }
+    }
+  }
+
   return {
     ...base,
-    rules: { ...base.rules, ...override.rules },
-    skills: { ...base.skills, ...override.skills },
+    ...override,
+    rules: mergedRules as FusConfig['rules'],
   };
 }

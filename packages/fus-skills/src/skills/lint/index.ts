@@ -18,7 +18,7 @@ export class LintSkill extends BaseSkill {
         return { success: false, message: '未找到lint命令，请在package.json中配置lint脚本' };
       }
 
-      const result = await $([lintCommand]);
+      const result = await $`${lintCommand}`;
 
       const passed = result.exitCode === 0;
       return {
