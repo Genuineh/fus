@@ -12,6 +12,21 @@ Fus 是一个 Claude Code 插件项目，提供代码审查Agent、自定义Skil
 - `@fus/agent` - 自定义Agent（代码审查）
 - `@fus/skills` - 自定义Skills（commit, pr, test, lint）
 - `@fus/mcp` - MCP服务器（预留）
+- `@fus/cli` - 插件管理CLI工具
+
+## Fus CLI
+
+Fus CLI 用于管理 Claude Code 插件。
+
+```bash
+# 进入交互式菜单
+cd packages/fus-cli && node dist/index.js
+
+# 命令行使用
+cd packages/fus-cli && node dist/index.js list
+```
+
+详见 [docs/guide/fus-cli-usage.md](docs/guide/fus-cli-usage.md)
 
 ## 文档
 
