@@ -2,6 +2,7 @@ import inquirer from 'inquirer';
 import type { Scope, Source } from '../types.js';
 import { install } from '../commands/install.js';
 import { list } from '../commands/list.js';
+import { uninstall } from '../commands/uninstall.js';
 
 export async function mainMenu(): Promise<void> {
   const { action } = await inquirer.prompt([
@@ -40,7 +41,7 @@ async function handleAction(action: string): Promise<void> {
       console.log('更新功能开发中...');
       break;
     case 'uninstall':
-      console.log('删除功能开发中...');
+      await uninstallWizard();
       break;
     case 'search':
       console.log('搜索功能开发中...');
@@ -122,4 +123,8 @@ async function installWizard(): Promise<void> {
 
 async function listPlugins(): Promise<void> {
   await list();
+}
+
+async function uninstallWizard(): Promise<void> {
+  await uninstall();
 }
