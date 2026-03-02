@@ -3,6 +3,7 @@ import type { Scope, Source } from '../types.js';
 import { install } from '../commands/install.js';
 import { list } from '../commands/list.js';
 import { uninstall } from '../commands/uninstall.js';
+import { update } from '../commands/update.js';
 
 export async function mainMenu(): Promise<void> {
   const { action } = await inquirer.prompt([
@@ -38,7 +39,7 @@ async function handleAction(action: string): Promise<void> {
       await listPlugins();
       break;
     case 'update':
-      console.log('更新功能开发中...');
+      await updateWizard();
       break;
     case 'uninstall':
       await uninstallWizard();
@@ -127,4 +128,8 @@ async function listPlugins(): Promise<void> {
 
 async function uninstallWizard(): Promise<void> {
   await uninstall();
+}
+
+async function updateWizard(): Promise<void> {
+  await update();
 }
