@@ -1,19 +1,60 @@
 {
-  "schema_version": "1.0",
-  "name_for_human": "Fus",
-  "name_for_machine": "fus",
-  "description": "Universal development toolset plugin for Claude Code. Provides comprehensive agent system and skills including leader, architect, developer, code-reviewer, tester, and verifier agents. Also includes 28+ skills for documentation, backend, frontend, testing, and product design.",
-  "icon": "📦",
-  "categories": [
-    "developer-tools",
-    "productivity",
-    "code-assistants"
-  ],
-  "installations": [
+  "name": "fus",
+  "owner": {
+    "name": "JerryG",
+    "email": "jerryg@github.com"
+  },
+  "metadata": {
+    "description": "Universal development toolset plugin for Claude Code. Provides comprehensive agent system and skills for full development lifecycle.",
+    "version": "1.0.0"
+  },
+  "plugins": [
     {
-      "type": "git",
-      "url": "https://github.com/Genuineh/fus.git",
-      "path": "packages/fus-plugin"
+      "name": "fus",
+      "description": "Universal development toolset plugin with agents and skills",
+      "source": "./",
+      "strict": false,
+      "agents": [
+        "./agents/leader",
+        "./agents/architect",
+        "./agents/developer",
+        "./agents/code-reviewer",
+        "./agents/tester",
+        "./agents/verifier"
+      ],
+      "skills": [
+        "./skills/skill-overview",
+        "./skills/agents",
+        "./skills/plan",
+        "./skills/docs-general",
+        "./skills/docs-todo",
+        "./skills/docs-prds",
+        "./skills/docs-specs",
+        "./skills/docs-guide",
+        "./skills/docs-adr",
+        "./skills/backend-principles",
+        "./skills/backend-database",
+        "./skills/backend-microservices",
+        "./skills/backend-queue",
+        "./skills/backend-api",
+        "./skills/backend-cache",
+        "./skills/backend-rust",
+        "./skills/frontend-general-principles",
+        "./skills/frontend-tauri-native",
+        "./skills/frontend-framework-nextjs",
+        "./skills/frontend-state-management",
+        "./skills/frontend-styling-twind",
+        "./skills/frontend-api-integration",
+        "./skills/frontend-design",
+        "./skills/test-frontend-unit",
+        "./skills/test-e2e",
+        "./skills/project-rust",
+        "./skills/product-principles",
+        "./skills/product-ux"
+      ],
+      "commands": [
+        "./commands/fus"
+      ]
     }
   ]
 }
