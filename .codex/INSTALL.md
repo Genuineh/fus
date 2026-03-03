@@ -83,3 +83,8 @@ If skills don't appear:
 1. Make sure the symlink was created correctly
 2. Restart Codex completely (quit and relaunch)
 3. Check: `ls -la ~/.agents/skills/fus`
+
+## More Information
+
+For detailed usage guide and examples, see:
+- [docs/README.codex.md](../docs/README.codex.md)

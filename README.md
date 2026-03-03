@@ -20,6 +20,14 @@ fus/
 └── docs/                    # Documentation
 ```
 
+## Quick Install for Codex
+
+Tell Codex:
+
+```
+Fetch and follow instructions from https://raw.githubusercontent.com/Genuineh/fus/refs/heads/main/.codex/INSTALL.md
+```
+
 ## Modules
 
 - `@fus/plugin` - Claude Code plugin with agents and skills
