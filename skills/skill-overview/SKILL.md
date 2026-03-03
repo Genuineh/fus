@@ -65,6 +65,7 @@ Quick reference guide for all available skills. Use this to find the right skill
 | Skill | Description | When to Use |
 |-------|-------------|-------------|
 | `plan` | Task planning | Decomposing tasks, planning |
+| `fus-lead` | Task orchestration | Workflow management, task coordination |
 | `fus-agents` | Fus agent reference | Understanding available Fus agents |
 
 ---
