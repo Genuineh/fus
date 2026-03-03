@@ -19,7 +19,7 @@ Enable fus custom agents in VSCode Copilot.
    mkdir -p .github/agents
 
    # Copy all agent definitions
-   cp -r agents/*.agent.md .github/agents/
+   cp -r copilot-agents/*.agent.md .github/agents/
    ```
 
    For user profile (available in all projects):
@@ -27,7 +27,7 @@ Enable fus custom agents in VSCode Copilot.
    mkdir -p ~/.copilot/agents
 
    # Copy all agent definitions
-   cp -r agents/*.agent.md ~/.copilot/agents/
+   cp -r copilot-agents/*.agent.md ~/.copilot/agents/
    ```
 
 ### Option 2: Clone and Symlink
@@ -38,14 +38,14 @@ git clone https://github.com/Genuineh/fus.git ~/.copilot/fus
 
 # Create symlink to agents
 mkdir -p ~/.copilot/agents
-ln -sf ~/.copilot/fus/agents/*.agent.md ~/.copilot/agents/
+ln -sf ~/.copilot/fus/copilot-agents/*.agent.md ~/.copilot/agents/
 ```
 
 Or for workspace:
 ```bash
 git clone https://github.com/Genuineh/fus.git .fus-temp
 mkdir -p .github/agents
-cp .fus-temp/agents/*.agent.md .github/agents/
+cp .fus-temp/copilot-agents/*.agent.md .github/agents/
 rm -rf .fus-temp
 ```
 
@@ -97,7 +97,7 @@ After installation:
 cd ~/.copilot/fus && git pull
 
 # If using copy, re-copy
-cp -r agents/*.agent.md ~/.copilot/agents/
+cp -r copilot-agents/*.agent.md ~/.copilot/agents/
 ```
 
 ## Uninstalling

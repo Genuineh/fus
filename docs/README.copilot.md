@@ -11,13 +11,13 @@ Tell Copilot to install fus agents:
 1. **Copy agents to workspace:**
    ```bash
    mkdir -p .github/agents
-   # Copy the .agent.md files from this repository
+   cp copilot-agents/*.agent.md .github/agents/
    ```
 
 2. **Or copy to user profile:**
    ```bash
    mkdir -p ~/.copilot/agents
-   cp agents/*.agent.md ~/.copilot/agents/
+   cp copilot-agents/*.agent.md ~/.copilot/agents/
    ```
 
 ### Option 2: Clone and Use
@@ -30,7 +30,7 @@ git clone https://github.com/Genuineh/fus.git ~/.copilot/fus
 mkdir -p ~/.copilot/agents
 
 # Link agents
-ln -sf ~/.copilot/fus/agents/*.agent.md ~/.copilot/agents/
+ln -sf ~/.copilot/fus/copilot-agents/*.agent.md ~/.copilot/agents/
 ```
 
 Then restart VSCode.

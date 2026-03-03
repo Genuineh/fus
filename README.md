@@ -13,7 +13,8 @@ fus/
 ├── .claude-plugin/           # Claude Code plugin metadata
 ├── .codex/                   # Codex installation guide
 ├── .copilot/                 # VSCode Copilot installation guide
-├── agents/                   # Agent definitions (.agent.md for Copilot)
+├── copilot-agents/           # Copilot custom agents (.agent.md)
+├── agents/                   # Agent reference docs (for skills)
 ├── commands/                 # CLI commands
 ├── skills/                  # Skill definitions (28+ skills)
 ├── packages/
@@ -40,7 +41,7 @@ See [`.copilot/INSTALL.md`](.copilot/INSTALL.md) for installation.
 ```bash
 # Quick install
 mkdir -p .github/agents
-cp agents/*.agent.md .github/agents/
+cp copilot-agents/*.agent.md .github/agents/
 ```
 
 ## Quick Install for Codex
