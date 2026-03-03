@@ -41,7 +41,7 @@ See [`.copilot/INSTALL.md`](.copilot/INSTALL.md) for installation.
 ```bash
 # Quick install
 mkdir -p .github/agents
-cp copilot-agents/*.agent.md .github/agents/
+cp copilot-agents/*.md .github/agents/
 ```
 
 ## Quick Install for Codex
