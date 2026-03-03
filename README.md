@@ -10,12 +10,12 @@ Fus is a Claude Code plugin that provides a comprehensive agent system and skill
 
 ```
 fus/
+├── .claude-plugin/           # Claude Code plugin metadata
+├── agents/                   # Agent definitions
+├── commands/                 # CLI commands
+├── skills/                  # Skill definitions
 ├── packages/
-│   ├── fus-plugin/          # Claude Code plugin
-│   │   ├── agents/          # Agent definitions
-│   │   ├── commands/        # CLI commands
-│   │   └── skills/          # Skill definitions
-│   └── fus-cli/             # Plugin management CLI
+│   └── fus-cli/            # Plugin management CLI
 └── docs/                    # Documentation
 ```
 
@@ -81,14 +81,14 @@ pnpm install
 
 ```bash
 # Set plugin directory when starting Claude Code
-claude --plugin-dir ./packages/fus-plugin
+claude --plugin-dir .
 ```
 
 #### Option 2: Copy to Claude Code Plugins
 
 ```bash
 # Copy plugin to Claude Code plugins directory
-cp -r packages/fus-plugin ~/.claude/plugins/fus-plugin
+cp -r . ~/.claude/plugins/fus
 ```
 
 ### Using the Plugin
