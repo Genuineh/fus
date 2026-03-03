@@ -1,19 +1,20 @@
 # Fus
 
-Universal development toolset plugin for Claude Code.
+Universal development toolset plugin for Claude Code and Codex.
 
 ## Project Overview
 
-Fus is a Claude Code plugin that provides a comprehensive agent system and skills for software development, covering the full development lifecycle from design to verification.
+Fus is a plugin that provides comprehensive skills for software development, covering the full development lifecycle from design to verification. Supports both Claude Code and Codex.
 
 ## Structure
 
 ```
 fus/
 ├── .claude-plugin/           # Claude Code plugin metadata
-├── agents/                   # Agent definitions
+├── .codex/                   # Codex installation guide
+├── agents/                   # Agent definitions (for reference)
 ├── commands/                 # CLI commands
-├── skills/                  # Skill definitions
+├── skills/                  # Skill definitions (28+ skills)
 ├── packages/
 │   └── fus-cli/            # Plugin management CLI
 └── docs/                    # Documentation
@@ -26,20 +27,17 @@ fus/
 
 ## Fus Plugin
 
-The plugin provides 6 specialized agents and 28 skills:
+Fus provides 28+ skills for full-stack development:
 
-### Agents
+### Core Skills
 
-| Agent | Description |
+| Skill | Description |
 |-------|-------------|
-| `leader` | Task orchestration, workflow management |
-| `architect` | Architecture analysis, technical decisions |
-| `developer` | Code implementation |
-| `code-reviewer` | Code quality and security review |
-| `tester` | Test writing and coverage |
-| `verifier` | Quality verification |
+| `fus-lead` | Task orchestration, workflow management |
+| `fus-agents` | Agent reference guide |
+| `plan` | Task planning |
 
-### Skills
+### Domain Skills
 
 - **Documentation (docs-*)**: docs-general, docs-todo, docs-prds, docs-specs, docs-guide, docs-adr
 - **Backend (backend-*)**: backend-principles, backend-database, backend-microservices, backend-queue, backend-api, backend-cache, backend-rust
@@ -91,21 +89,34 @@ claude --plugin-dir .
 cp -r . ~/.claude/plugins/fus
 ```
 
+### Use in Codex
+
+See [`.codex/INSTALL.md`](.codex/INSTALL.md) for detailed installation instructions.
+
+```bash
+# Quick install
+git clone https://github.com/Genuineh/fus.git ~/.codex/fus
+mkdir -p ~/.agents/skills
+ln -s ~/.codex/fus/skills ~/.agents/skills/fus
+```
+
+Then restart Codex to discover the skills.
+
 ### Using the Plugin
 
 Once installed, you can interact with the plugin through natural language:
 
-#### Invoke Leader Agent
+#### Use fus-lead Skill
 
 ```
 I need to implement a new feature: user authentication system.
 ```
 
-The Leader agent will:
+The fus-lead skill will:
 1. Clarify requirements if needed
-2. Dispatch Architect to design the feature
-3. Coordinate Developer, Tester, Code-Reviewer, and Verifier
-4. Report progress to you
+2. Help plan and decompose the task
+3. Guide you through the appropriate workflow
+4. Track progress
 
 #### Invoke Specific Agent
 
