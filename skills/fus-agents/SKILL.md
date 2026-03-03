@@ -1,6 +1,6 @@
 ---
-name: agents
-description: Agent Reference Manual. Describes available agents, their roles, responsibilities, and boundaries. Use for understanding agent capabilities and dispatching the right agent.
+name: fus-agents
+description: Fus Agent Reference Manual. Describes available agents, their roles, responsibilities, and boundaries. Use for understanding agent capabilities and dispatching the right agent.
 version: 1.0.0
 ---
 
