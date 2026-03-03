@@ -4,50 +4,50 @@ import { existsSync } from 'fs';
 import { getPlugins, type PluginInfo } from './list.js';
 
 export async function uninstall(): Promise<void> {
-  console.log('\n🗑️  删除插件\n');
+  console.log('\n🗑️  Remove Plugin\n');
 
   const plugins = await getPlugins();
 
   if (plugins.length === 0) {
-    console.log('没有已安装的插件。\n');
+    console.log('No plugins installed.\n');
     return;
   }
 
-  // 让用户选择要删除的插件
+  // Let user select which plugin to remove
   const { selectedPlugin } = await inquirer.prompt([
     {
       type: 'list',
       name: 'selectedPlugin',
-      message: '请选择要删除的插件:',
+      message: 'Select plugin to remove:',
       choices: plugins.map(p => ({
-        name: `${p.name} (${p.scope === 'global' ? '全局' : '项目'})`,
+        name: `${p.name} (${p.scope === 'global' ? 'global' : 'project'})`,
         value: p.name,
       })),
     },
   ]);
 
-  // 确认删除
+  // Confirm removal
   const { confirm } = await inquirer.prompt([
     {
       type: 'confirm',
       name: 'confirm',
-      message: `确认删除插件 "${selectedPlugin}"?`,
+      message: `Confirm remove plugin "${selectedPlugin}"?`,
       default: false,
     },
   ]);
 
   if (!confirm) {
-    console.log('已取消删除。\n');
+    console.log('Removal cancelled.\n');
     return;
   }
 
-  // 执行删除
+  // Execute removal
   const plugin = plugins.find(p => p.name === selectedPlugin);
   if (plugin && existsSync(plugin.path)) {
     await fs.rm(plugin.path, { recursive: true, force: true });
-    console.log(`✅ 已删除插件: ${selectedPlugin}\n`);
+    console.log(`✅ Plugin removed: ${selectedPlugin}\n`);
   } else {
-    console.log(`❌ 删除失败: 插件路径不存在\n`);
+    console.log(`❌ Removal failed: plugin path does not exist\n`);
   }
 }
 
@@ -56,16 +56,16 @@ export async function uninstallByName(pluginName: string, scope?: 'global' | 'pr
   const plugin = plugins.find(p => p.name === pluginName && (!scope || p.scope === scope));
 
   if (!plugin) {
-    console.log(`❌ 未找到插件: ${pluginName}\n`);
+    console.log(`❌ Plugin not found: ${pluginName}\n`);
     return false;
   }
 
   if (existsSync(plugin.path)) {
     await fs.rm(plugin.path, { recursive: true, force: true });
-    console.log(`✅ 已删除插件: ${pluginName}\n`);
+    console.log(`✅ Plugin removed: ${pluginName}\n`);
     return true;
   }
 
-  console.log(`❌ 删除失败: 插件路径不存在\n`);
+  console.log(`❌ Removal failed: plugin path does not exist\n`);
   return false;
 }

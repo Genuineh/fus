@@ -19,7 +19,7 @@ async function main() {
     return;
   }
 
-  // 支持命令行参数
+  // Support command line arguments
   switch (command) {
     case 'install':
     case 'i': {
@@ -37,7 +37,7 @@ async function main() {
     case 's': {
       const keyword = args[1] || '';
       if (!keyword) {
-        console.log('请提供搜索关键词');
+        console.log('Please provide a search keyword');
         process.exit(1);
       }
       await search(keyword);
@@ -56,8 +56,8 @@ async function main() {
       await uninstall();
       break;
     default:
-      console.log(`未知命令: ${command}`);
-      console.log('使用: fus [install|list|search|check|update|uninstall]');
+      console.log(`Unknown command: ${command}`);
+      console.log('Usage: fus [install|list|search|check|update|uninstall]');
       process.exit(1);
   }
 }

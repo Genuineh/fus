@@ -5,15 +5,15 @@ const GLOBAL_PATH = path.join(process.env.HOME || '~', '.claude/plugins/user-plu
 const PROJECT_PATH = '.claude/skills';
 
 export async function check(): Promise<void> {
-  console.log('🔍 Fus 状态检查\n');
+  console.log('🔍 Fus Status Check\n');
 
-  // 检查 fus 安装位置
-  console.log('📍 安装位置:');
-  console.log(`   全局: ${GLOBAL_PATH}`);
-  console.log(`   项目: ${PROJECT_PATH}`);
+  // Check fus installation paths
+  console.log('📍 Installation Paths:');
+  console.log(`   Global: ${GLOBAL_PATH}`);
+  console.log(`   Project: ${PROJECT_PATH}`);
 
-  // 检查全局插件
-  console.log('\n📦 全局插件:');
+  // Check global plugins
+  console.log('\n📦 Global Plugins:');
   try {
     const globalExists = await fs.access(GLOBAL_PATH).then(() => true).catch(() => false);
     if (globalExists) {
@@ -23,17 +23,17 @@ export async function check(): Promise<void> {
           console.log(`   - ${plugin}`);
         }
       } else {
-        console.log('   (无)');
+        console.log('   (none)');
       }
     } else {
-      console.log('   (未安装)');
+      console.log('   (not installed)');
     }
   } catch {
-    console.log('   (无)');
+    console.log('   (none)');
   }
 
-  // 检查项目插件
-  console.log('\n📦 项目插件:');
+  // Check project plugins
+  console.log('\n📦 Project Plugins:');
   try {
     const projectExists = await fs.access(PROJECT_PATH).then(() => true).catch(() => false);
     if (projectExists) {
@@ -44,13 +44,13 @@ export async function check(): Promise<void> {
           console.log(`   - ${plugin}`);
         }
       } else {
-        console.log('   (无)');
+        console.log('   (none)');
       }
     } else {
-      console.log('   (无)');
+      console.log('   (none)');
     }
   } catch {
-    console.log('   (无)');
+    console.log('   (none)');
   }
 
   console.log('');

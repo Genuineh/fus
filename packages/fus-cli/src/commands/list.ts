@@ -14,14 +14,14 @@ export interface PluginInfo {
 }
 
 export async function list(): Promise<void> {
-  console.log('\n📦 已安装的插件:\n');
+  console.log('\n📦 Installed Plugins:\n');
 
-  // 全局插件
-  console.log('全局插件:');
+  // Global plugins
+  console.log('Global Plugins:');
   await listDirectory(GLOBAL_PATH);
 
-  // 项目插件
-  console.log('\n项目插件:');
+  // Project plugins
+  console.log('\nProject Plugins:');
   await listDirectory(PROJECT_PATH);
 
   console.log('');
@@ -30,7 +30,7 @@ export async function list(): Promise<void> {
 export async function getPlugins(): Promise<PluginInfo[]> {
   const plugins: PluginInfo[] = [];
 
-  // 获取全局插件
+  // Get global plugins
   try {
     const globalEntries = await fs.readdir(GLOBAL_PATH, { withFileTypes: true });
     for (const entry of globalEntries) {
@@ -43,10 +43,10 @@ export async function getPlugins(): Promise<PluginInfo[]> {
       }
     }
   } catch {
-    // 目录不存在
+    // Directory doesn't exist
   }
 
-  // 获取项目插件
+  // Get project plugins
   try {
     const projectEntries = await fs.readdir(PROJECT_PATH, { withFileTypes: true });
     for (const entry of projectEntries) {
@@ -59,7 +59,7 @@ export async function getPlugins(): Promise<PluginInfo[]> {
       }
     }
   } catch {
-    // 目录不存在
+    // Directory doesn't exist
   }
 
   return plugins;
@@ -72,7 +72,7 @@ async function listDirectory(dirPath: string): Promise<void> {
     const plugins = entries.filter(e => e.isDirectory() && !e.name.startsWith('.'));
 
     if (plugins.length === 0) {
-      console.log('  (无)');
+      console.log('  (none)');
       return;
     }
 
@@ -80,6 +80,6 @@ async function listDirectory(dirPath: string): Promise<void> {
       console.log(`  - ${plugin.name}`);
     }
   } catch {
-    console.log('  (目录不存在)');
+    console.log('  (directory does not exist)');
   }
 }

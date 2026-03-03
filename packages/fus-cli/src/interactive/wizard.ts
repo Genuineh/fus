@@ -11,20 +11,20 @@ export async function mainMenu(): Promise<void> {
     {
       type: 'list',
       name: 'action',
-      message: '请选择操作:',
+      message: 'Select action:',
       choices: [
-        { name: '安装插件', value: 'install' },
-        { name: '更新插件', value: 'update' },
-        { name: '删除插件', value: 'uninstall' },
-        { name: '列出插件', value: 'list' },
-        { name: '搜索插件', value: 'search' },
-        { name: '退出', value: 'exit' },
+        { name: 'Install Plugin', value: 'install' },
+        { name: 'Update Plugin', value: 'update' },
+        { name: 'Remove Plugin', value: 'uninstall' },
+        { name: 'List Plugins', value: 'list' },
+        { name: 'Search Plugins', value: 'search' },
+        { name: 'Exit', value: 'exit' },
       ],
     },
   ]);
 
   if (action === 'exit') {
-    console.log('再见!');
+    console.log('Goodbye!');
     process.exit(0);
   }
 
@@ -54,72 +54,72 @@ async function handleAction(action: string): Promise<void> {
 }
 
 async function installWizard(): Promise<void> {
-  // 选择全局或项目
+  // Select global or project
   const { scope } = await inquirer.prompt([
     {
       type: 'list',
       name: 'scope',
-      message: '安装到:',
+      message: 'Install to:',
       choices: [
-        { name: '全局 (所有项目可用)', value: 'global' },
-        { name: '当前项目', value: 'project' },
+        { name: 'Global (available to all projects)', value: 'global' },
+        { name: 'Current project', value: 'project' },
       ],
     },
   ]);
 
-  // 选择来源
+  // Select source
   const { source } = await inquirer.prompt([
     {
       type: 'list',
       name: 'source',
-      message: '插件来源:',
+      message: 'Plugin source:',
       choices: [
-        { name: '本地路径', value: 'local' },
-        { name: 'NPM包', value: 'npm' },
+        { name: 'Local path', value: 'local' },
+        { name: 'NPM package', value: 'npm' },
       ],
     },
   ]);
 
-  // 输入路径或包名
+  // Enter path or package name
   let input: string;
   if (source === 'local') {
     const { path } = await inquirer.prompt([
       {
         type: 'input',
         name: 'path',
-        message: '请输入插件路径:',
-        validate: (input) => input.length > 0 || '请输入有效路径',
+        message: 'Enter plugin path:',
+        validate: (input) => input.length > 0 || 'Please enter a valid path',
       },
     ]);
     input = path;
   } else {
-    const { package: pkg } = await inquirer.prompt([
+    const { pkg } = await inquirer.prompt([
       {
         type: 'input',
         name: 'package',
-        message: '请输入NPM包名 (如 @scope/name):',
-        validate: (input) => input.length > 0 || '请输入有效包名',
+        message: 'Enter NPM package name (e.g., @scope/name):',
+        validate: (input) => input.length > 0 || 'Please enter a valid package name',
       },
     ]);
     input = pkg;
   }
 
-  // 确认安装
+  // Confirm installation
   const { confirm } = await inquirer.prompt([
     {
       type: 'confirm',
       name: 'confirm',
-      message: `确认安装到${scope === 'global' ? '全局' : '当前项目'}?`,
+      message: `Confirm install to ${scope === 'global' ? 'global' : 'current project'}?`,
       default: true,
     },
   ]);
 
   if (!confirm) {
-    console.log('已取消');
+    console.log('Cancelled');
     return;
   }
 
-  // 执行安装
+  // Execute installation
   await install({ scope, source, path: source === 'local' ? input : undefined, npmPackage: source === 'npm' ? input : undefined });
 }
 

@@ -10,7 +10,7 @@ const PROJECT_PATH = '.claude/skills';
 export async function install(options: InstallOptions): Promise<void> {
   const targetPath = options.scope === 'global' ? GLOBAL_PATH : PROJECT_PATH;
 
-  console.log(`\n→ 目标路径: ${targetPath}`);
+  console.log(`\n→ Target path: ${targetPath}`);
 
   try {
     if (options.source === 'local' && options.path) {
@@ -19,9 +19,9 @@ export async function install(options: InstallOptions): Promise<void> {
       await installFromNpm(options.npmPackage, targetPath);
     }
 
-    console.log('✅ 安装成功!\n');
+    console.log('✅ Installation successful!\n');
   } catch (error) {
-    console.error('❌ 安装失败:', error);
+    console.error('❌ Installation failed:', error);
     process.exit(1);
   }
 }
@@ -30,49 +30,49 @@ async function installFromLocal(sourcePath: string, targetPath: string): Promise
   const resolvedPath = path.resolve(sourcePath.replace('~', process.env.HOME || ''));
 
   if (!existsSync(resolvedPath)) {
-    throw new Error(`路径不存在: ${resolvedPath}`);
+    throw new Error(`Path does not exist: ${resolvedPath}`);
   }
 
-  // 获取插件名称
+  // Get plugin name
   const pluginName = path.basename(resolvedPath);
   const destPath = path.join(targetPath, pluginName);
 
-  // 检查是否是自身子目录或相同目录
+  // Check if it's a subdirectory or same directory
   const resolvedDest = path.resolve(destPath);
   if (resolvedPath.startsWith(resolvedDest) || resolvedPath === resolvedDest) {
-    throw new Error(`不能将目录安装到自身的子目录中: ${resolvedPath}`);
+    throw new Error(`Cannot install a directory into its own subdirectory: ${resolvedPath}`);
   }
 
-  // 复制文件
+  // Copy files
   await fs.mkdir(targetPath, { recursive: true });
   await fs.cp(resolvedPath, destPath, { recursive: true });
 
-  console.log(`已安装: ${pluginName} → ${destPath}`);
+  console.log(`Installed: ${pluginName} → ${destPath}`);
 }
 
 async function installFromNpm(packageName: string, targetPath: string): Promise<void> {
-  // 临时目录安装
+  // Temporary directory for installation
   const tempDir = path.join(targetPath, '.temp');
   await fs.mkdir(tempDir, { recursive: true });
 
   try {
-    // 安装到临时目录
+    // Install to temporary directory
     await $`npm pack ${packageName} --pack-destination=${tempDir}`;
 
-    // 解压
+    // Extract
     const tarball = (await fs.readdir(tempDir)).find(f => f.endsWith('.tgz'));
     if (!tarball) {
-      throw new Error('下载失败');
+      throw new Error('Download failed');
     }
 
-    // 解压tarball
+    // Extract tarball
     const destDir = path.join(targetPath, packageName);
     await fs.mkdir(destDir, { recursive: true });
     await $`tar -xzf ${path.join(tempDir, tarball)} -C ${destDir} --strip-components=1`;
 
-    console.log(`已安装: ${packageName}`);
+    console.log(`Installed: ${packageName}`);
   } finally {
-    // 清理临时目录
+    // Clean up temporary directory
     await fs.rm(tempDir, { recursive: true, force: true });
   }
 }

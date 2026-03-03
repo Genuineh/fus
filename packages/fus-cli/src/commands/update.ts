@@ -4,25 +4,25 @@ import { install } from './install.js';
 import type { InstallOptions } from '../types.js';
 
 export async function update(): Promise<void> {
-  console.log('\n🔄 更新插件\n');
+  console.log('\n🔄 Update Plugins\n');
 
   const plugins = await getPlugins();
 
   if (plugins.length === 0) {
-    console.log('没有已安装的插件。\n');
+    console.log('No plugins installed.\n');
     return;
   }
 
-  // 让用户选择要更新的插件
+  // Let user select which plugin to update
   const { selectedPlugin } = await inquirer.prompt([
     {
       type: 'list',
       name: 'selectedPlugin',
-      message: '请选择要更新的插件:',
+      message: 'Select plugin to update:',
       choices: [
-        { name: '更新所有插件', value: '__all__' },
+        { name: 'Update all plugins', value: '__all__' },
         ...plugins.map(p => ({
-          name: `${p.name} (${p.scope === 'global' ? '全局' : '项目'})`,
+          name: `${p.name} (${p.scope === 'global' ? 'global' : 'project'})`,
           value: p.name,
         })),
       ],
@@ -30,36 +30,36 @@ export async function update(): Promise<void> {
   ]);
 
   if (selectedPlugin === '__all__') {
-    // 更新所有插件
-    console.log('\n更新所有插件功能开发中...\n');
+    // Update all plugins
+    console.log('\nUpdate all plugins feature under development...\n');
     return;
   }
 
-  // 获取插件信息
+  // Get plugin info
   const plugin = plugins.find(p => p.name === selectedPlugin);
   if (!plugin) {
-    console.log('❌ 未找到插件\n');
+    console.log('❌ Plugin not found\n');
     return;
   }
 
-  // 确认更新
+  // Confirm update
   const { confirm } = await inquirer.prompt([
     {
       type: 'confirm',
       name: 'confirm',
-      message: `确认更新插件 "${selectedPlugin}"?`,
+      message: `Confirm update plugin "${selectedPlugin}"?`,
       default: true,
     },
   ]);
 
   if (!confirm) {
-    console.log('已取消更新。\n');
+    console.log('Update cancelled.\n');
     return;
   }
 
-  // 重新安装插件（NPM包需要重新下载）
-  console.log('\n更新插件功能需要原始安装源。');
-  console.log('请使用 uninstall 删除后重新安装。\n');
+  // Reinstall plugin (NPM packages need to re-download)
+  console.log('\nUpdate requires original installation source.');
+  console.log('Please use uninstall and then reinstall.\n');
 }
 
 export async function updateByName(pluginName: string): Promise<boolean> {
@@ -67,13 +67,13 @@ export async function updateByName(pluginName: string): Promise<boolean> {
   const plugin = plugins.find(p => p.name === pluginName);
 
   if (!plugin) {
-    console.log(`❌ 未找到插件: ${pluginName}\n`);
+    console.log(`❌ Plugin not found: ${pluginName}\n`);
     return false;
   }
 
-  console.log(`\n🔄 正在更新插件: ${pluginName}\n`);
+  console.log(`\n🔄 Updating plugin: ${pluginName}\n`);
 
-  // 重新安装
+  // Reinstall
   const options: InstallOptions = {
     scope: plugin.scope,
     source: 'local',
