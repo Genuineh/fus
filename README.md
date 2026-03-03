@@ -62,6 +62,136 @@ cd packages/fus-cli && node dist/index.js list
 
 ## Quick Start
 
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/your-repo/fus.git
+
+# Navigate to project
+cd fus
+
+# Install dependencies
+pnpm install
+```
+
+### Use in Claude Code
+
+#### Option 1: Use Plugin Directory
+
+```bash
+# Set plugin directory when starting Claude Code
+claude --plugin-dir ./packages/fus-plugin
+```
+
+#### Option 2: Copy to Claude Code Plugins
+
+```bash
+# Copy plugin to Claude Code plugins directory
+cp -r packages/fus-plugin ~/.claude/plugins/fus-plugin
+```
+
+### Using the Plugin
+
+Once installed, you can interact with the plugin through natural language:
+
+#### Invoke Leader Agent
+
+```
+I need to implement a new feature: user authentication system.
+```
+
+The Leader agent will:
+1. Clarify requirements if needed
+2. Dispatch Architect to design the feature
+3. Coordinate Developer, Tester, Code-Reviewer, and Verifier
+4. Report progress to you
+
+#### Invoke Specific Agent
+
+```
+Use the architect agent to design a microservices architecture for the payment system.
+```
+
+```
+Use the developer agent to implement the user login API endpoint.
+```
+
+```
+Use the tester agent to write tests for the shopping cart functionality.
+```
+
+#### Use Skills Directly
+
+```
+Use skill: backend-api to design a REST API for the user resource.
+```
+
+```
+Use skill: frontend-framework-nextjs to set up a Next.js project.
+```
+
+```
+Use skill: docs-prds to write a PRD for the new payment feature.
+```
+
+```
+Use skill: test-e2e to set up e2e testing with Playwright.
+```
+
+### Task Examples
+
+#### New Feature Development
+
+```
+I want to add a new feature: real-time notifications.
+```
+
+→ Leader dispatches Architect → Developer → Tester → Code-Reviewer → Verifier
+
+#### Bug Fix
+
+```
+Fix the login redirect bug where users are redirected to the wrong page.
+```
+
+→ Leader dispatches Developer → Tester → Code-Reviewer → Verifier
+
+#### Architecture Change
+
+```
+Refactor the monolithic backend into microservices.
+```
+
+→ Leader dispatches Architect → Code-Reviewer → Developer → Tester → Verifier
+
+#### Documentation
+
+```
+Write a user guide for the new dashboard feature.
+```
+
+→ Use docs-guide skill
+
+#### Code Review
+
+```
+Review the recent changes to the authentication module.
+```
+
+→ Code-Reviewer analyzes code and provides feedback
+
+## Available Commands
+
+After plugin installation, you can use:
+
+| Command | Description |
+|---------|-------------|
+| `/fus` | Open plugin menu |
+| Natural language | Describe your task, Leader agent will coordinate |
+
+## Building
+
 ```bash
 # Install dependencies
 pnpm install
