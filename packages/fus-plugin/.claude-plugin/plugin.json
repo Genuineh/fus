@@ -1,0 +1,8 @@
+{
+  "name": "fus",
+  "description": "Fus - Claude Code 通用开发工具集，包含 commit、pr、test、lint 等命令和 code-reviewer agent",
+  "author": {
+    "name": "JerryG",
+    "email": "jerryg@github.com"
+  }
+}
