@@ -1,13 +1,13 @@
 ---
 description: Software Development Specialist. Implements features and fixes bugs based on confirmed designs/requirements.
-name: fus-developer
+name: developer
 user-invokable: true
 handoffs:
   - label: Write Tests
-    agent: fus-tester
+    agent: tester
     prompt: Please write tests for the implementation.
   - label: Review Code
-    agent: fus-reviewer
+    agent: reviewer
     prompt: Please review this implementation.
 ---
 

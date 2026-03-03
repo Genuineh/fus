@@ -44,7 +44,7 @@ After installation:
 
 ## Available Agents
 
-### fus-lead
+### lead
 
 Task orchestration and workflow management agent.
 
@@ -54,9 +54,9 @@ Task orchestration and workflow management agent.
 - Not sure which workflow to use
 
 **Handoffs:**
-- → fus-architect (for design)
+- → architect (for design)
 
-### fus-architect
+### architect
 
 Architecture and technical design agent.
 
@@ -66,9 +66,9 @@ Architecture and technical design agent.
 - Writing PRD or technical spec
 
 **Handoffs:**
-- → fus-developer (for implementation)
+- → developer (for implementation)
 
-### fus-developer
+### developer
 
 Code implementation agent.
 
@@ -78,10 +78,10 @@ Code implementation agent.
 - Making code changes
 
 **Handoffs:**
-- → fus-tester (for tests)
-- → fus-reviewer (for review)
+- → tester (for tests)
+- → reviewer (for review)
 
-### fus-reviewer
+### reviewer
 
 Code review agent.
 
@@ -91,9 +91,9 @@ Code review agent.
 - Quality assessment
 
 **Handoffs:**
-- → fus-verifier (for validation)
+- → verifier (for validation)
 
-### fus-tester
+### tester
 
 Test writing agent.
 
@@ -103,9 +103,9 @@ Test writing agent.
 - Creating e2e tests
 
 **Handoffs:**
-- → fus-reviewer (for review)
+- → reviewer (for review)
 
-### fus-verifier
+### verifier
 
 Verification agent.
 
@@ -120,7 +120,7 @@ Verification agent.
 
 1. Open Copilot Chat
 2. Type `/agents` to see available agents
-3. Select `fus-lead`
+3. Select `lead`
 4. Describe your task
 
 Example:
@@ -133,7 +133,7 @@ I need to implement a user authentication system with React and Node.js
 After an agent completes their work, use the handoff buttons to smoothly transition to the next agent:
 
 ```
-fus-lead → fus-architect → fus-developer → fus-tester → fus-reviewer → fus-verifier
+lead → architect → developer → tester → reviewer → verifier
 ```
 
 ### Direct Agent Invocation
@@ -141,63 +141,63 @@ fus-lead → fus-architect → fus-developer → fus-tester → fus-reviewer →
 You can also invoke specific agents directly:
 
 ```
-@fus-architect Design a REST API for a blog system
+@architect Design a REST API for a blog system
 ```
 
 ```
-@fus-developer Implement the user registration endpoint
+@developer Implement the user registration endpoint
 ```
 
 ```
-@fus-reviewer Review the authentication code
+@reviewer Review the authentication code
 ```
 
 ## Workflow Examples
 
 ### New Feature
 
-1. **Start with fus-lead:**
+1. **Start with lead:**
    ```
    I want to add a real-time notification feature
    ```
 
-2. **fus-lead** will help plan and handoff to **fus-architect**
+2. **lead** will help plan and handoff to **architect**
 
-3. **fus-architect** creates design, handoff to **fus-developer**
+3. **architect** creates design, handoff to **developer**
 
-4. **fus-developer** implements, handoff to **fus-tester**
+4. **developer** implements, handoff to **tester**
 
-5. **fus-tester** writes tests, handoff to **fus-reviewer**
+5. **tester** writes tests, handoff to **reviewer**
 
-6. **fus-reviewer** reviews, handoff to **fus-verifier**
+6. **reviewer** reviews, handoff to **verifier**
 
-7. **fus-verifier** confirms completion
+7. **verifier** confirms completion
 
 ### Bug Fix
 
-1. **Start with fus-lead:**
+1. **Start with lead:**
    ```
    Fix the login redirect bug
    ```
 
-2. **fus-lead** analyzes and handoffs to **fus-developer**
+2. **lead** analyzes and handoffs to **developer**
 
-3. **fus-developer** fixes, handoff to **fus-tester**
+3. **developer** fixes, handoff to **tester**
 
-4. **fus-tester** verifies fix, handoff to **fus-verifier**
+4. **tester** verifies fix, handoff to **verifier**
 
-5. **fus-verifier** confirms fix
+5. **verifier** confirms fix
 
 ### Code Review
 
-1. **Start with fus-reviewer:**
+1. **Start with reviewer:**
    ```
    Review the recent changes to the auth module
    ```
 
-2. **fus-reviewer** provides detailed review
+2. **reviewer** provides detailed review
 
-3. Handoff to **fus-developer** if fixes needed
+3. Handoff to **developer** if fixes needed
 
 ## Agent Instructions
 
@@ -224,10 +224,10 @@ cp agents/*.agent.md ~/.copilot/agents/
 
 ```bash
 # Remove workspace agents
-rm -rf .github/agents/fus-*
+rm -rf .github/agents/*.agent
 
 # Or remove user agents
-rm -rf ~/.copilot/agents/fus-*
+rm -rf ~/.copilot/agents/*.agent
 rm -rf ~/.copilot/fus
 ```
 

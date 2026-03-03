@@ -1,10 +1,10 @@
 ---
 description: Expert code review specialist. Proactively reviews code for quality, security, and maintainability.
-name: fus-reviewer
+name: reviewer
 user-invokable: true
 handoffs:
   - label: Verify
-    agent: fus-verifier
+    agent: verifier
     prompt: Please verify this implementation.
 ---
 

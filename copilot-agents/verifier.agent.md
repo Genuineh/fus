@@ -1,6 +1,6 @@
 ---
 description: Quality verification and completion checks. Validates that implementation meets requirements.
-name: fus-verifier
+name: verifier
 user-invokable: true
 ---
 

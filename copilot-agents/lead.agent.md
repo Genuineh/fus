@@ -1,10 +1,10 @@
 ---
 description: Task orchestration and workflow management. Coordinates development tasks, decomposes complex tasks, and guides through appropriate workflows.
-name: fus-lead
+name: lead
 user-invokable: true
 handoffs:
   - label: Design with Architect
-    agent: fus-architect
+    agent: architect
     prompt: I need to design a solution for this task.
 ---
 

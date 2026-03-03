@@ -1,10 +1,10 @@
 ---
 description: Architecture Analysis and Refactoring Expert. Focuses on system architecture design, module decomposition, technical debt analysis, and architecture optimization recommendations.
-name: fus-architect
+name: architect
 user-invokable: true
 handoffs:
   - label: Implement
-    agent: fus-developer
+    agent: developer
     prompt: Please implement the design created by the architect.
 ---
 

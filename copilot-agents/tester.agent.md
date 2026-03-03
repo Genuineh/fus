@@ -1,10 +1,10 @@
 ---
 description: Test writing and quality assurance. Creates unit tests, integration tests, and e2e tests.
-name: fus-tester
+name: tester
 user-invokable: true
 handoffs:
   - label: Review Tests
-    agent: fus-reviewer
+    agent: reviewer
     prompt: Please review the test code.
 ---
 

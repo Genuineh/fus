@@ -55,12 +55,12 @@ After installation, the following agents will be available in Copilot:
 
 | Agent | Description |
 |-------|-------------|
-| `fus-lead` | Task orchestration, workflow management |
-| `fus-architect` | Architecture analysis, technical decisions |
-| `fus-developer` | Code implementation |
-| `fus-reviewer` | Code quality and security review |
-| `fus-tester` | Test writing and coverage |
-| `fus-verifier` | Quality verification |
+| `lead` | Task orchestration, workflow management |
+| `architect` | Architecture analysis, technical decisions |
+| `developer` | Code implementation |
+| `reviewer` | Code quality and security review |
+| `tester` | Test writing and coverage |
+| `verifier` | Quality verification |
 
 ## Usage
 
@@ -80,7 +80,7 @@ After installation, the following agents will be available in Copilot:
 Fus agents are configured with handoffs for workflow:
 
 ```
-fus-lead → fus-architect → fus-developer → fus-tester → fus-reviewer → fus-verifier
+lead → architect → developer → tester → reviewer → verifier
 ```
 
 ## Verification
@@ -104,10 +104,10 @@ cp -r copilot-agents/*.agent.md ~/.copilot/agents/
 
 ```bash
 # Remove workspace agents
-rm -rf .github/agents/fus-*
+rm -rf .github/agents/*.agent
 
 # Or remove user agents
-rm -rf ~/.copilot/agents/fus-*
+rm -rf ~/.copilot/agents/*.agent
 rm -rf ~/.copilot/fus
 ```
 
