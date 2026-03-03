@@ -12,38 +12,12 @@
     {
       "name": "fus",
       "description": "Universal development toolset plugin with agents and skills",
+      "version": "1.0.0",
       "source": "./",
-      "strict": false,
-      "skills": [
-        "./skills/skill-overview",
-        "./skills/agents",
-        "./skills/plan",
-        "./skills/docs-general",
-        "./skills/docs-todo",
-        "./skills/docs-prds",
-        "./skills/docs-specs",
-        "./skills/docs-guide",
-        "./skills/docs-adr",
-        "./skills/backend-principles",
-        "./skills/backend-database",
-        "./skills/backend-microservices",
-        "./skills/backend-queue",
-        "./skills/backend-api",
-        "./skills/backend-cache",
-        "./skills/backend-rust",
-        "./skills/frontend-general-principles",
-        "./skills/frontend-tauri-native",
-        "./skills/frontend-framework-nextjs",
-        "./skills/frontend-state-management",
-        "./skills/frontend-styling-twind",
-        "./skills/frontend-api-integration",
-        "./skills/frontend-design",
-        "./skills/test-frontend-unit",
-        "./skills/test-e2e",
-        "./skills/project-rust",
-        "./skills/product-principles",
-        "./skills/product-ux"
-      ]
+      "author": {
+        "name": "JerryG",
+        "email": "jerryg@github.com"
+      }
     }
   ]
 }

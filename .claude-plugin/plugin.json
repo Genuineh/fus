@@ -4,13 +4,9 @@
   "description": "Universal development toolset plugin for Claude Code. Provides comprehensive agent system and skills for full development lifecycle.",
   "author": {
     "name": "JerryG",
-    "email": "jerryg@github.com",
-    "url": "https://github.com/Genuineh/fus"
+    "email": "jerryg@github.com"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Genuineh/fus.git"
-  },
+  "repository": "https://github.com/Genuineh/fus",
   "keywords": [
     "claude-code",
     "plugin",
