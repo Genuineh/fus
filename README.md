@@ -1,57 +1,96 @@
 # Fus
 
-Claude Code 通用开发工具集插件项目。
+Universal development toolset plugin for Claude Code.
 
-## 项目简介
+## Project Overview
 
-Fus 是一个 Claude Code 插件项目，提供代码审查Agent、自定义Skills和MCP能力。
+Fus is a Claude Code plugin that provides a comprehensive agent system and skills for software development, covering the full development lifecycle from design to verification.
 
-## 模块
+## Structure
 
-- `@fus/core` - 核心共享模块（类型、配置、工具）
-- `@fus/agent` - 自定义Agent（代码审查）
-- `@fus/skills` - 自定义Skills（commit, pr, test, lint）
-- `@fus/mcp` - MCP服务器（预留）
-- `@fus/cli` - 插件管理CLI工具
+```
+fus/
+├── packages/
+│   ├── fus-plugin/          # Claude Code plugin
+│   │   ├── agents/          # Agent definitions
+│   │   ├── commands/        # CLI commands
+│   │   └── skills/          # Skill definitions
+│   └── fus-cli/             # Plugin management CLI
+└── docs/                    # Documentation
+```
+
+## Modules
+
+- `@fus/plugin` - Claude Code plugin with agents and skills
+- `@fus/cli` - Plugin management CLI tool
+
+## Fus Plugin
+
+The plugin provides 6 specialized agents and 28 skills:
+
+### Agents
+
+| Agent | Description |
+|-------|-------------|
+| `leader` | Task orchestration, workflow management |
+| `architect` | Architecture analysis, technical decisions |
+| `developer` | Code implementation |
+| `code-reviewer` | Code quality and security review |
+| `tester` | Test writing and coverage |
+| `verifier` | Quality verification |
+
+### Skills
+
+- **Documentation (docs-*)**: docs-general, docs-todo, docs-prds, docs-specs, docs-guide, docs-adr
+- **Backend (backend-*)**: backend-principles, backend-database, backend-microservices, backend-queue, backend-api, backend-cache, backend-rust
+- **Frontend (frontend-*)**: frontend-general-principles, frontend-tauri-native, frontend-framework-nextjs, frontend-state-management, frontend-styling-twind, frontend-api-integration, frontend-design
+- **Testing (test-*)**: test-frontend-unit, test-e2e
+- **Project (project-*)**: project-rust
+- **Product (product-*)**: product-principles, product-ux
 
 ## Fus CLI
 
-Fus CLI 用于管理 Claude Code 插件。
+Fus CLI is used to manage Claude Code plugins.
 
 ```bash
-# 进入交互式菜单
+# Interactive menu
 cd packages/fus-cli && node dist/index.js
 
-# 命令行使用
+# Command line
 cd packages/fus-cli && node dist/index.js list
 ```
 
-详见 [docs/guide/fus-cli-usage.md](docs/guide/fus-cli-usage.md)
-
-## 文档
-
-- [docs/TODO.md](docs/TODO.md) - 当前工作优先级
-- [docs/prds/](docs/prds/) - 计划与设计
-- [docs/guide/](docs/guide/) - 使用指南
-- [docs/specs/](docs/specs/) - 规范文档
-- [docs/decisions/](docs/decisions/) - 架构决策
-
-## 快速开始
+## Quick Start
 
 ```bash
-# 安装依赖
+# Install dependencies
 pnpm install
 
-# 构建所有模块
+# Build all modules
 pnpm build
 
-# 运行测试
+# Run tests
 pnpm test
 ```
 
-## 自定义 Skills
+## Workflow
 
-- `/commit` - 智能提交代码
-- `/pr` - 管理 Pull Request
-- `/test` - 运行测试
-- `/lint` - 代码质量检查
+The agent team follows these workflows:
+
+```
+New Feature: Design → Develop → Test → Review → Verify
+Bug Fix: Analyze → Develop → Test → Review → Verify
+Architecture Change: Design → Review → Develop → Test → Verify
+Documentation: Create/Update → Review → Verify
+```
+
+## Documentation
+
+- [docs/TODO.md](docs/TODO.md) - Current priorities
+- [docs/prds/](docs/prds/) - Plans and designs
+- [docs/specs/](docs/specs/) - Technical specifications
+- [docs/guide/](docs/guide/) - Usage guides
+
+## License
+
+MIT
