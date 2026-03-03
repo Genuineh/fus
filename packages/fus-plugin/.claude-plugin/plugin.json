@@ -1,8 +1,24 @@
 {
+  "version": "1.0.0",
   "name": "fus",
-  "description": "Fus - Claude Code 通用开发工具集，包含 commit、pr、test、lint 等命令和 code-reviewer agent",
+  "description": "Universal development toolset plugin for Claude Code. Provides comprehensive agent system and skills for full development lifecycle.",
   "author": {
     "name": "JerryG",
-    "email": "jerryg@github.com"
-  }
+    "email": "jerryg@github.com",
+    "url": "https://github.com/Genuineh/fus"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Genuineh/fus.git"
+  },
+  "keywords": [
+    "claude-code",
+    "plugin",
+    "agent",
+    "skills",
+    "development",
+    "code-review",
+    "testing"
+  ],
+  "license": "MIT"
 }

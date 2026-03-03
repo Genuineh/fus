@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "name_for_human": "Fus",
+  "name_for_machine": "fus",
+  "description": "Universal development toolset plugin for Claude Code. Provides comprehensive agent system and skills including leader, architect, developer, code-reviewer, tester, and verifier agents. Also includes 28+ skills for documentation, backend, frontend, testing, and product design.",
+  "icon": "📦",
+  "categories": [
+    "developer-tools",
+    "productivity",
+    "code-assistants"
+  ],
+  "installations": [
+    {
+      "type": "git",
+      "url": "https://github.com/Genuineh/fus.git",
+      "path": "packages/fus-plugin"
+    }
+  ]
+}
