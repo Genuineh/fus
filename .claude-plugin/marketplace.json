@@ -14,14 +14,6 @@
       "description": "Universal development toolset plugin with agents and skills",
       "source": "./",
       "strict": false,
-      "agents": [
-        "./agents/leader",
-        "./agents/architect",
-        "./agents/developer",
-        "./agents/code-reviewer",
-        "./agents/tester",
-        "./agents/verifier"
-      ],
       "skills": [
         "./skills/skill-overview",
         "./skills/agents",
@@ -51,9 +43,6 @@
         "./skills/project-rust",
         "./skills/product-principles",
         "./skills/product-ux"
-      ],
-      "commands": [
-        "./commands/fus"
       ]
     }
   ]
