@@ -72,17 +72,7 @@ After installation:
 
 ## Available Agents
 
-### lead
-
-Task orchestration and workflow management agent.
-
-**When to use:**
-- Starting a new task
-- Need to break down complex work
-- Not sure which workflow to use
-
-**Handoffs:**
-- → architect (for design)
+Note: Task orchestration (Lead) is handled by fus-lead skill in Claude Code, not in Copilot custom agents.
 
 ### architect
 
@@ -148,7 +138,7 @@ Verification agent.
 
 1. Open Copilot Chat
 2. Type `/agents` to see available agents
-3. Select `lead`
+3. Select an agent (e.g., `architect` or `developer`)
 4. Describe your task
 
 Example:
@@ -161,7 +151,7 @@ I need to implement a user authentication system with React and Node.js
 After an agent completes their work, use the handoff buttons to smoothly transition to the next agent:
 
 ```
-lead → architect → developer → tester → reviewer → verifier
+architect → developer → tester → reviewer → verifier
 ```
 
 ### Direct Agent Invocation
@@ -184,37 +174,33 @@ You can also invoke specific agents directly:
 
 ### New Feature
 
-1. **Start with lead:**
+1. **Start with architect:**
    ```
    I want to add a real-time notification feature
    ```
 
-2. **lead** will help plan and handoff to **architect**
+2. **architect** creates design, handoff to **developer**
 
-3. **architect** creates design, handoff to **developer**
+3. **developer** implements, handoff to **tester**
 
-4. **developer** implements, handoff to **tester**
+4. **tester** writes tests, handoff to **reviewer**
 
-5. **tester** writes tests, handoff to **reviewer**
+5. **reviewer** reviews, handoff to **verifier**
 
-6. **reviewer** reviews, handoff to **verifier**
-
-7. **verifier** confirms completion
+6. **verifier** confirms completion
 
 ### Bug Fix
 
-1. **Start with lead:**
+1. **Start with developer:**
    ```
    Fix the login redirect bug
    ```
 
-2. **lead** analyzes and handoffs to **developer**
+2. **developer** fixes, handoff to **tester**
 
-3. **developer** fixes, handoff to **tester**
+3. **tester** verifies fix, handoff to **verifier**
 
-4. **tester** verifies fix, handoff to **verifier**
-
-5. **verifier** confirms fix
+4. **verifier** confirms fix
 
 ### Code Review
 
