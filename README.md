@@ -29,6 +29,17 @@ fus/
 
 #### Option 1: Use /plugin Command (Recommended)
 
+First, add the Fus marketplace:
+```
+/plugin add-marketplace https://github.com/Genuineh/fus/raw/refs/heads/main/.claude-plugin/marketplace.json
+```
+
+Then install Fus:
+```
+/plugin install fus
+```
+
+Or install directly:
 ```
 /plugin install https://github.com/Genuineh/fus
 ```
