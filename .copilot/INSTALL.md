@@ -55,7 +55,6 @@ After installation, the following agents will be available in Copilot:
 
 | Agent | Description |
 |-------|-------------|
-| `lead` | Task orchestration, workflow management |
 | `architect` | Architecture analysis, technical decisions |
 | `developer` | Code implementation |
 | `reviewer` | Code quality and security review |
@@ -80,8 +79,10 @@ After installation, the following agents will be available in Copilot:
 Fus agents are configured with handoffs for workflow:
 
 ```
-lead → architect → developer → tester → reviewer → verifier
+architect → developer → tester → reviewer → verifier
 ```
+
+Note: Task orchestration (Lead) is handled by fus-lead skill in Claude Code, not in Copilot custom agents.
 
 ## Verification
 
@@ -97,7 +98,7 @@ After installation:
 cd ~/.copilot/fus && git pull
 
 # If using copy, re-copy
-cp -r copilot-agents/*.agent.md ~/.copilot/agents/
+cp -r copilot-agents/*.md ~/.copilot/agents/
 ```
 
 ## Uninstalling
@@ -115,9 +116,9 @@ rm -rf ~/.copilot/fus
 
 ### Agents not appearing
 
-1. Make sure `.agent.md` files are in correct location
+1. Make sure `.md` files are in correct location
 2. Restart VSCode
-3. Check file naming: must end with `.agent.md`
+3. Check file naming: must end with `.md`
 4. Verify YAML frontmatter is valid
 
 ### Tools not working
