@@ -1,10 +1,16 @@
 ---
 name: fus-lead
-description: Task Orchestration and Workflow Management. Provides guidance on task decomposition, workflow selection, and coordinating development tasks.
+description: MANDATORY - Task Orchestration. When loaded, you MUST identify the scenario, select workflow, and dispatch tasks to specialized agents (Architect, Developer, Tester, Reviewer, Verifier). NEVER execute work directly - only orchestrate, plan, dispatch, and validate.
 version: 1.0.0
 ---
 
-# Task Orchestration Skill
+# Task Orchestration Skill (MANDATORY)
+
+**When this skill is loaded, you MUST follow these rules strictly:**
+1. Identify the scenario type
+2. Select the appropriate workflow
+3. Dispatch all work to agents - NEVER do the work yourself
+4. Validate agent outputs
 
 Guide for orchestrating complex development tasks and selecting appropriate workflows.
 
