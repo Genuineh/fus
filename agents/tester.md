@@ -22,6 +22,17 @@ At the start of each task:
    - Check existing test patterns in the codebase
    - Review relevant specs for test requirements
 
+## Skills to Load
+
+Based on the task, load the appropriate skills:
+
+| Task Type | Skills to Load |
+|-----------|----------------|
+| Unit testing | `test-frontend-unit` |
+| E2E testing | `test-e2e` |
+| Frontend tests | `test-frontend-unit`, `frontend-framework-nextjs` |
+| Backend tests | `test-frontend-unit` (for API tests) |
+
 ## When to Use
 
 Automatically invoked when user requests:

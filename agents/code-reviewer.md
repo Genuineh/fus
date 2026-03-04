@@ -22,6 +22,19 @@ At the start of each task:
    - Check relevant specs/docs for the code being reviewed
    - Understand the technology stack
 
+## Skills to Load
+
+Based on the code being reviewed, load the appropriate skills:
+
+| Code Type | Skills to Load |
+|-----------|----------------|
+| Frontend React/Next.js | `frontend-framework-nextjs`, `frontend-design` |
+| Frontend Tauri | `frontend-tauri-native` |
+| Backend API | `backend-api`, `backend-principles` |
+| Rust backend | `backend-rust` |
+| Database | `backend-database` |
+| Tests | `test-frontend-unit`, `test-e2e` |
+
 ## When to Use
 
 Automatically invoked when user requests:

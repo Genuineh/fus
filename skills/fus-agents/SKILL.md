@@ -35,6 +35,14 @@ Manual describing available agents, their roles, responsibilities, and boundarie
 - Module decomposition
 - Technical debt analysis
 
+**Skills to Load:**
+- `skill-overview` - Quick reference to all skills
+- `docs-prds` - For writing product requirements
+- `docs-specs` - For writing technical specifications
+- `docs-adr` - For architecture decision records
+- `backend-principles` - For backend architecture decisions
+- `frontend-general-principles` - For frontend architecture decisions
+
 **Input Requirements:**
 - Clear feature goal
 - Any existing constraints
@@ -78,6 +86,13 @@ Deliver:
 - Code changes based on specs
 - Adding new functionality
 
+**Skills to Load:**
+- `skill-overview` - Quick reference to all skills
+- Domain-specific skill based on task:
+  - **Backend tasks**: `backend-api`, `backend-rust`, `backend-database`, etc.
+  - **Frontend tasks**: `frontend-framework-nextjs`, `frontend-tauri-native`, `frontend-state-management`, etc.
+  - **General**: `backend-principles` or `frontend-general-principles`
+
 **Input Requirements:**
 - Clear design/specification
 - Known requirements
@@ -119,6 +134,14 @@ Deliver:
 - Adding test coverage
 - Creating test documentation
 - Fixing broken tests
+
+**Skills to Load:**
+- `skill-overview` - Quick reference to all skills
+- `test-frontend-unit` - For unit testing
+- `test-e2e` - For end-to-end testing
+- Domain-specific skill based on implementation:
+  - **Frontend**: `frontend-framework-nextjs`, `frontend-tauri-native`
+  - **Backend**: `backend-api`, `backend-rust`
 
 **Input Requirements:**
 - Implementation to test
@@ -162,6 +185,13 @@ Deliver:
 - Quality assessment
 - Pre-merge checks
 
+**Skills to Load:**
+- `skill-overview` - Quick reference to all skills
+- Domain-specific skill based on code being reviewed:
+  - **Frontend**: `frontend-framework-nextjs`, `frontend-tauri-native`, `frontend-design`
+  - **Backend**: `backend-api`, `backend-rust`, `backend-database`
+  - **Testing**: `test-frontend-unit`, `test-e2e`
+
 **Input Requirements:**
 - Code to review (or git diff)
 - Review scope
@@ -203,6 +233,14 @@ Deliver:
 - Checking task completeness
 - Regression testing
 - Acceptance criteria verification
+
+**Skills to Load:**
+- `skill-overview` - Quick reference to all skills
+- `test-frontend-unit` - For running unit tests
+- `test-e2e` - For running e2e tests
+- Domain-specific skill based on task:
+  - **Frontend**: `frontend-framework-nextjs`, `frontend-tauri-native`
+  - **Backend**: `backend-api`, `backend-rust`
 
 **Input Requirements:**
 - Task description

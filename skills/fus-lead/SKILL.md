@@ -255,15 +255,34 @@ Please create:
 
 ### Using fus-agents
 
-When you need specialized help:
+When you need specialized help, dispatch with specific skills:
 
-| Agent | When to Use | Skill to Load |
-|-------|-------------|---------------|
-| Architect | Need design/architecture | backend-*, docs-prds, docs-specs |
-| Developer | Need implementation | backend-*, frontend-* |
-| Tester | Need tests | test-frontend-unit, test-e2e |
-| Code Reviewer | Need review | (direct) |
-| Verifier | Need validation | (direct) |
+| Agent | When to Use | Skills to Load |
+|-------|-------------|----------------|
+| Architect | Need design/architecture | `skill-overview`, `docs-prds`, `docs-specs`, `docs-adr`, `backend-principles` |
+| Developer | Need implementation | `skill-overview` + domain skill (e.g., `backend-api`, `frontend-framework-nextjs`) |
+| Tester | Need tests | `skill-overview`, `test-frontend-unit`, `test-e2e` |
+| Code Reviewer | Need review | `skill-overview` + domain skill for code being reviewed |
+| Verifier | Need validation | `skill-overview`, `test-frontend-unit`, `test-e2e` |
+
+### Agent Dispatch Template
+
+When dispatching an agent, ALWAYS include which skills to load:
+
+```
+Agent: Architect
+Task: [Description]
+
+Skills to Load:
+- skill-overview
+- [domain-specific skills based on task]
+
+Context:
+[Details]
+
+Deliver:
+[Expected output]
+```
 
 ### Example Task Execution
 

@@ -23,6 +23,18 @@ At the start of each task:
    - Identify relevant documentation
    - Check existing patterns
 
+## Skills to Load
+
+Based on the task, load the appropriate skills:
+
+| Task Type | Skills to Load |
+|-----------|----------------|
+| Backend architecture | `backend-principles`, `backend-api`, `backend-database` |
+| Frontend architecture | `frontend-general-principles`, `frontend-framework-nextjs` |
+| Writing PRD | `docs-prds` |
+| Writing specs | `docs-specs` |
+| Architecture decisions | `docs-adr` |
+
 ## When to Use
 
 Automatically invoked when user requests:

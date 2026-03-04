@@ -22,6 +22,17 @@ At the start of each task:
    - Check the relevant specs/PRDs being verified
    - Understand the requirements being validated
 
+## Skills to Load
+
+Based on the verification task, load the appropriate skills:
+
+| Task Type | Skills to Load |
+|-----------|----------------|
+| Running tests | `test-frontend-unit`, `test-e2e` |
+| Frontend verification | `frontend-framework-nextjs`, `frontend-tauri-native` |
+| Backend verification | `backend-api`, `backend-rust` |
+| Design verification | `docs-prds`, `docs-specs` |
+
 ---
 
 ## Phase 1: Identify Scenario

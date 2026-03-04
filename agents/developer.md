@@ -23,6 +23,19 @@ At the start of each task:
    - Check existing patterns in the codebase
    - Review relevant docs (specs, guides)
 
+## Skills to Load
+
+Based on the task, load the appropriate skills:
+
+| Task Type | Skills to Load |
+|-----------|----------------|
+| Backend API | `backend-api`, `backend-principles` |
+| Rust backend | `backend-rust`, `backend-api` |
+| Frontend Next.js | `frontend-framework-nextjs`, `frontend-state-management` |
+| Frontend Tauri | `frontend-tauri-native` |
+| Database | `backend-database` |
+| Caching | `backend-cache` |
+
 ## When to Use
 
 Automatically invoked when user requests:
