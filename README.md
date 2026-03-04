@@ -27,6 +27,14 @@ fus/
 
 ### For Claude Code
 
+#### Option 1: Use /plugin Command (Recommended)
+
+```
+/plugin install https://github.com/Genuineh/fus
+```
+
+#### Option 2: Manual Install
+
 [Claude Code Plugin](./.claude-plugin/)
 
 ### For Codex (Skills)
