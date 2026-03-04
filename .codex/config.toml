@@ -1,0 +1,30 @@
+[features]
+multi_agent = true
+
+[agents]
+max_threads = 6
+max_depth = 1
+
+[agents.lead]
+description = "Task orchestration specialist. Coordinates development tasks, decomposes complex tasks, and guides through workflows."
+config_file = "codex-agents/lead.toml"
+
+[agents.architect]
+description = "Architecture expert. Analyzes system architecture, designs solutions, and makes technical decisions."
+config_file = "codex-agents/architect.toml"
+
+[agents.developer]
+description = "Software developer. Implements features and fixes bugs based on specifications."
+config_file = "codex-agents/developer.toml"
+
+[agents.reviewer]
+description = "Code reviewer. Reviews code for quality, security, and best practices."
+config_file = "codex-agents/reviewer.toml"
+
+[agents.tester]
+description = "Test specialist. Creates unit tests, integration tests, and e2e tests."
+config_file = "codex-agents/tester.toml"
+
+[agents.verifier]
+description = "Verification specialist. Validates task completion and acceptance criteria."
+config_file = "codex-agents/verifier.toml"

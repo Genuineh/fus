@@ -88,3 +88,91 @@ If skills don't appear:
 
 For detailed usage guide and examples, see:
 - [docs/README.codex.md](../docs/README.codex.md)
+
+---
+
+## Codex Multi-Agent Configuration
+
+Codex supports multi-agent workflows. You can configure Fus agents for multi-agent mode.
+
+### Prerequisites
+
+- Codex CLI installed
+- Multi-agent feature enabled
+
+### Enable Multi-Agent
+
+**Option 1: Via CLI**
+1. Run Codex with `/experimental` command
+2. Enable **Multi-agents**
+3. Restart Codex
+
+**Option 2: Via Config File**
+Add to `~/.codex/config.toml`:
+```toml
+[features]
+multi_agent = true
+```
+
+### Installation
+
+**Option 1: Copy to Project**
+```bash
+# Copy config and agents to project
+mkdir -p .codex
+cp .codex/config.toml .codex/
+cp -r codex-agents/ .codex/
+```
+
+**Option 2: Copy to User Directory**
+```bash
+# Copy to user config directory
+mkdir -p ~/.codex
+cp .codex/config.toml ~/.codex/
+cp -r codex-agents/ ~/.codex/
+```
+
+**Option 3: Clone and Symlink**
+```bash
+git clone https://github.com/Genuineh/fus.git ~/.codex/fus
+ln -sf ~/.codex/fus/.codex/config.toml ~/.codex/config.toml
+ln -sf ~/.codex/fus/codex-agents/ ~/.codex/
+```
+
+### Available Agents
+
+| Agent | Description |
+|-------|-------------|
+| `lead` | Task orchestration, workflow management |
+| `architect` | Architecture analysis, technical decisions |
+| `developer` | Code implementation |
+| `reviewer` | Code quality and security review |
+| `tester` | Test writing and coverage |
+| `verifier` | Quality verification |
+
+### Usage
+
+After configuration, you can spawn agents in multi-agent mode:
+
+```
+@lead Design and implement a user authentication system
+```
+
+The lead agent will coordinate other agents (architect, developer, tester, reviewer, verifier) as needed.
+
+### Updating
+
+```bash
+# If using clone
+cd ~/.codex/fus && git pull
+
+# If using copy, re-copy
+cp -r codex-agents/ ~/.codex/
+```
+
+### Uninstalling
+
+```bash
+rm ~/.codex/config.toml
+rm -rf ~/.codex/codex-agents
+```

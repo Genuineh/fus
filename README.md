@@ -11,9 +11,10 @@ Fus is a plugin that provides comprehensive skills for software development, cov
 ```
 fus/
 ├── .claude-plugin/           # Claude Code plugin metadata
-├── .codex/                   # Codex installation guide
+├── .codex/                   # Codex config and installation guide
 ├── .copilot/                 # VSCode Copilot installation guide
-├── copilot-agents/           # Copilot custom agents (.agent.md)
+├── codex-agents/             # Codex multi-agent configuration (TOML)
+├── copilot-agents/           # Copilot custom agents (.md)
 ├── agents/                   # Agent reference docs (for skills)
 ├── commands/                 # CLI commands
 ├── skills/                  # Skill definitions (28+ skills)
@@ -28,11 +29,29 @@ fus/
 
 [Claude Code Plugin](./.claude-plugin/)
 
-### For Codex
+### For Codex (Skills)
 
 ```
 Fetch and follow instructions from https://raw.githubusercontent.com/Genuineh/fus/refs/heads/main/.codex/INSTALL.md
 ```
+
+### For Codex (Multi-Agent)
+
+Copy the Codex config to your project or user directory:
+
+```bash
+# For project-specific agents
+mkdir -p .codex
+cp .codex/config.toml .codex/
+cp -r codex-agents/ .codex/
+
+# Or for user-wide agents
+mkdir -p ~/.codex
+cp .codex/config.toml ~/.codex/
+cp -r codex-agents/ ~/.codex/
+```
+
+Then enable multi-agent in Codex and restart.
 
 ### For VSCode Copilot
 
