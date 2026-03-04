@@ -45,6 +45,27 @@ Lead MUST dispatch all work to specialized agents:
 
 **Every task MUST be dispatched to an agent.** If no agent is suitable, escalate to human for clarification.
 
+### When to Dispatch for Research
+
+Before planning, Lead may need to gather information. Dispatch research tasks when:
+
+| Situation | Dispatch To | Goal |
+|-----------|-------------|------|
+| Unknown technology/framework | Developer or self-research | Learn about the technology |
+| Market/competitor analysis | Human or research agent | Gather market data |
+| Unknown domain/industry | Architect or domain expert | Understand domain requirements |
+| Existing system analysis | Developer with exploration skills | Document current system |
+
+**Important**: Research is NOT a separate workflow - it's part of the Analyze step. After research completes, continue with the appropriate workflow.
+
+```
+Task: Implement AI feature
+→ Analyze (requires research on AI frameworks)
+→ Dispatch: "Research AI frameworks for [use case]"
+→ Wait for research results
+→ Continue: Design → Implement → Test → Review → Verify
+```
+
 ---
 
 ## Standard Workflow Steps
