@@ -55,13 +55,13 @@ This changes the execution order: **Test (RED) always comes BEFORE Implement (GR
 
 Analyze the user request and map it to exactly one scenario:
 
-| Scenario                | Trigger Keywords                              | Workflow Used                  |
-|-------------------------|-----------------------------------------------|--------------------------------|
-| **New Feature**         | implement, add, create, build, new feature    | Full 6-step                    |
-| **Bug Fix**             | fix, bug, issue, error, broken, crash         | 5-step (no Design)             |
-| **Architecture Change** | refactor, restructure, redesign, migrate      | 6-step with early Review       |
-| **Documentation**       | document, write docs, guide, readme, spec     | 5-step (no Test)               |
-| **Code Review**         | review, audit, check, PR review               | 3-step                         |
+| Scenario                | Trigger Keywords                              |
+|-------------------------|-----------------------------------------------|
+| **New Feature**         | implement, add, create, build, new feature    |
+| **Bug Fix**             | fix, bug, issue, error, broken, crash         |
+| **Architecture Change** | refactor, restructure, redesign, migrate      |
+| **Documentation**       | document, write docs, guide, readme, spec     |
+| **Code Review**         | review, audit, check, PR review               |
 
 If it doesn't clearly match any scenario → immediately ask for clarification using the clarification template.
 
@@ -71,26 +71,27 @@ If it doesn't clearly match any scenario → immediately ask for clarification u
 
 1. **Analyze**      – Understand requirements and context
 2. **Design**       – Create architecture/plan (Architect)
-3. **Implement**    – Execute the work (Developer)
-4. **Test**         – Write and run tests (Tester)
+3. **RedTest**      – Write failing tests first (Tester)
+4. **GreenImplement**    – Implement code to pass tests (Developer)
 5. **Review**       – Peer code/design review (Reviewer)
 6. **Verify**       – Final validation against requirements (Verifier)
 
+Note: RedTest/GreenImplement applies to code tasks (New Feature, Bug Fix). Non-code tasks (Documentation, Code Review) follow traditional flow.
 ---
 
 ## Full Workflows (Follow Exactly)
 
 **Workflow 1: New Feature**
-Analyze → Design (Architect) → RedTest (Tester) → Implement (Developer) → GreenTest (Tester) → Review (Reviewer) → Verify (Verifier)
+Analyze → Design (Architect) → RedTest (Tester) → GreenImplement (Developer) → Review (Reviewer) → Verify (Verifier)
 
 **Workflow 2: Bug Fix**
-Analyze → RedTest(Tester) → Implement (Developer) → GreenTest (Tester) → Review (Reviewer) → Verify (Verifier)
+Analyze → RedTest(Tester) → GreenImplement (Developer) → Review (Reviewer) → Verify (Verifier)
 
 **Workflow 3: Architecture Change**
-Analyze → Design (Architect) → Review (Reviewer) → RedTest (Tester) → Implement (Developer) → GreenTest (Tester) → Verify (Verifier)
+Analyze → Design (Architect) → Review (Reviewer) → RedTest (Tester) → GreenImplement (Developer) → Verify (Verifier)
 
 **Workflow 4: Documentation**
-Analyze → Design → Implement (Developer) → Review (Reviewer) → Verify (Verifier)
+Analyze → Design → Review (Reviewer) → Verify (Verifier)
 
 **Workflow 5: Code Review**
 Analyze → Review (Reviewer) → Verify (Verifier)
