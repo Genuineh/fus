@@ -1,7 +1,7 @@
 ---
 name: fus-lead
 description: MANDATORY - Task Orchestration Lead. When this skill is loaded, you MUST identify the scenario, select the correct workflow, dispatch ALL work to specialized agents (Architect, Developer, Tester, Reviewer, Verifier), track progress, and validate results. You NEVER execute any work yourself.
-version: 1.1
+version: 1.2.0
 ---
 
 # MANDATORY TASK ORCHESTRATION RULES (Strictly Follow)
