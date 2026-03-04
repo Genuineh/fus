@@ -20,19 +20,36 @@ This skill helps you:
 
 ---
 
+## Standard Workflow Steps
+
+All workflows follow these standard steps:
+
+| Step | Name | Description |
+|------|------|-------------|
+| 1 | **Analyze** | Understand the task, requirements, and context |
+| 2 | **Design** | Create architecture/design (if needed) |
+| 3 | **Implement** | Execute the work (develop, write, etc.) |
+| 4 | **Test** | Verify the work (tests, validation) |
+| 5 | **Review** | Get peer feedback |
+| 6 | **Verify** | Final validation against requirements |
+
+**Note:** Not all workflows need all steps. Some steps may be combined or skipped based on task type.
+
+---
+
 ## Task Identification
 
 ### Scenario Mapping
 
 Analyze the request and map to scenario:
 
-| Scenario | Indicators | Workflow |
-|----------|-----------|----------|
-| **New Feature** | "implement", "add feature", "create new" | Design → Develop → Test → Review → Verify |
-| **Bug Fix** | "fix", "bug", "issue", "error" | Analyze → Develop → Test → Review → Verify |
-| **Architecture Change** | "refactor", "architecture", "restructure" | Design → Review → Develop → Test → Verify |
-| **Documentation** | "document", "write guide", "create docs" | Create/Update → Review → Verify |
-| **Code Review** | "review", "check code", "audit" | Review → Report |
+| Scenario | Indicators | Workflow Steps |
+|----------|-----------|----------------|
+| **New Feature** | "implement", "add feature", "create new" | Analyze → Design → Implement → Test → Review → Verify |
+| **Bug Fix** | "fix", "bug", "issue", "error" | Analyze → Implement → Test → Review → Verify |
+| **Architecture Change** | "refactor", "architecture", "restructure" | Analyze → Design → Review → Implement → Test → Verify |
+| **Documentation** | "document", "write guide", "create docs" | Analyze → Design → Implement → Review → Verify |
+| **Code Review** | "review", "check code", "audit" | Analyze → Review → Verify |
 
 ### Decision Process
 
@@ -137,25 +154,31 @@ Please create:
 
 ### Workflow 1: New Feature
 
+Full workflow with all 6 steps:
+
 ```
 ┌─────────────┐
-│ 1. Design  │ ← Use fus-agents/Architect or docs-prds/docs-specs
+│ 1. Analyze │ ← Understand requirements, constraints
 └──────┬──────┘
        ↓
 ┌─────────────┐
-│ 2. Develop  │ ← Implement with appropriate backend/frontend skills
+│ 2. Design  │ ← Use fus-agents/Architect + docs-prds/docs-specs
 └──────┬──────┘
        ↓
 ┌─────────────┐
-│ 3. Test     │ ← Use test-frontend-unit or test-e2e
+│ 3. Implement│ ← Use fus-agents/Developer + domain skills
 └──────┬──────┘
        ↓
 ┌─────────────┐
-│ 4. Review   │ ← Use fus-agents/Code Reviewer
+│ 4. Test    │ ← Use fus-agents/Tester + test skills
 └──────┬──────┘
        ↓
 ┌─────────────┐
-│ 5. Verify   │ ← Manual verification or fus-agents/Verifier
+│ 5. Review   │ ← Use fus-agents/Reviewer
+└──────┬──────┘
+       ↓
+┌─────────────┐
+│ 6. Verify   │ ← Use fus-agents/Verifier + manual check
 └──────┬──────┘
        ↓
    Complete
@@ -165,17 +188,19 @@ Please create:
 
 ### Workflow 2: Bug Fix
 
+5 steps (no Design step):
+
 ```
 ┌─────────────┐
-│ 1. Analyze  │ ← Read code, understand bug
+│ 1. Analyze │ ← Understand bug, find root cause
 └──────┬──────┘
        ↓
 ┌─────────────┐
-│ 2. Develop  │ ← Fix the bug
+│ 2. Implement│ ← Fix the bug
 └──────┬──────┘
        ↓
 ┌─────────────┐
-│ 3. Test     │ ← Verify fix works
+│ 3. Test    │ ← Verify fix works
 └──────┬──────┘
        ↓
 ┌─────────────┐
@@ -183,7 +208,7 @@ Please create:
 └──────┬──────┘
        ↓
 ┌─────────────┐
-│ 5. Verify   │ ← Validate fix
+│ 5. Verify   │ ← Confirm fix, no regressions
 └──────┬──────┘
        ↓
    Complete
@@ -193,25 +218,31 @@ Please create:
 
 ### Workflow 3: Architecture Change
 
+6 steps with early Review (for impact analysis):
+
 ```
 ┌─────────────┐
-│ 1. Design  │ ← Use fus-agents/Architect or backend-* skills
+│ 1. Analyze │ ← Understand current architecture
 └──────┬──────┘
        ↓
 ┌─────────────┐
-│ 2. Review   │ ← Impact analysis
+│ 2. Design  │ ← Create refactoring plan
 └──────┬──────┘
        ↓
 ┌─────────────┐
-│ 3. Develop  │ ← Implement changes
+│ 3. Review   │ ← Impact analysis (before implementation)
 └──────┬──────┘
        ↓
 ┌─────────────┐
-│ 4. Test     │ ← Verify changes work
+│ 4. Implement│ ← Execute refactoring
 └──────┬──────┘
        ↓
 ┌─────────────┐
-│ 5. Verify   │ ← Validate
+│ 5. Test    │ ← Verify changes work
+└──────┬──────┘
+       ↓
+┌─────────────┐
+│ 6. Verify   │ ← Validate completion
 └──────┬──────┘
        ↓
    Complete
@@ -221,13 +252,27 @@ Please create:
 
 ### Workflow 4: Documentation
 
+5 steps (no Test step needed):
+
 ```
 ┌─────────────┐
-│ 1. Create  │ ← Use docs-* skills
+│ 1. Analyze │ ← Understand what needs documenting
 └──────┬──────┘
        ↓
 ┌─────────────┐
-│ 2. Review   │ ← Self-check
+│ 2. Design  │ ← Outline structure
+└──────┬──────┘
+       ↓
+┌─────────────┐
+│ 3. Implement│ ← Write documentation
+└──────┬──────┘
+       ↓
+┌─────────────┐
+│ 4. Review   │ ← Self-check + peer review
+└──────┬──────┘
+       ↓
+┌─────────────┐
+│ 5. Verify   │ ← Check completeness, accuracy
 └──────┬──────┘
        ↓
    Complete
@@ -237,13 +282,19 @@ Please create:
 
 ### Workflow 5: Code Review
 
+3 steps (streamlined):
+
 ```
 ┌─────────────┐
-│ 1. Review   │ ← Use fus-agents/Code Reviewer
+│ 1. Analyze │ ← Gather context, understand changes
 └──────┬──────┘
        ↓
 ┌─────────────┐
-│ 2. Report   │ ← Report findings
+│ 2. Review   │ ← Detailed review, find issues
+└──────┬──────┘
+       ↓
+┌─────────────┐
+│ 3. Verify   │ ← Confirm review completeness
 └──────┬──────┘
        ↓
    Complete
@@ -290,11 +341,11 @@ Deliver:
 
 1. **Clarify** - Ensure requirements are clear
 2. **Plan** - Use Plan Skill to decompose
-3. **Design** - Load docs-prds, create PRD
-4. **Develop** - Load relevant backend/frontend skills
-5. **Test** - Load test skills
-6. **Review** - Use fus-agents/Code Reviewer
-7. **Verify** - Use fus-agents/Verifier
+3. **Design** - Dispatch Architect with docs-prds, docs-specs
+4. **Implement** - Dispatch Developer with relevant domain skills
+5. **Test** - Dispatch Tester with test skills
+6. **Review** - Dispatch Reviewer
+7. **Verify** - Dispatch Verifier, confirm completion
 
 ---
 
@@ -363,11 +414,11 @@ Maintain task tracking in docs/TODO.md:
 
 | If user says... | Scenario | Workflow |
 |-----------------|----------|----------|
-| "implement X" | New Feature | Design → Develop → Test → Review → Verify |
-| "fix X bug" | Bug Fix | Analyze → Develop → Test → Review → Verify |
-| "refactor" | Architecture | Design → Review → Develop → Test → Verify |
-| "write docs" | Documentation | Create → Review |
-| "review X" | Code Review | Review → Report |
+| "implement X" | New Feature | Analyze → Design → Implement → Test → Review → Verify |
+| "fix X bug" | Bug Fix | Analyze → Implement → Test → Review → Verify |
+| "refactor" | Architecture Change | Analyze → Design → Review → Implement → Test → Verify |
+| "write docs" | Documentation | Analyze → Design → Implement → Review → Verify |
+| "review X" | Code Review | Analyze → Review → Verify |
 
 ### Skills to Load by Scenario
 
@@ -375,6 +426,6 @@ Maintain task tracking in docs/TODO.md:
 |----------|-------------|
 | New Feature | fus-agents, plan, docs-prds, docs-specs, backend-*, frontend-*, test-* |
 | Bug Fix | fus-agents, test-*, relevant domain skill |
-| Architecture | fus-agents, backend-*, docs-specs |
+| Architecture Change | fus-agents, backend-*, docs-specs |
 | Documentation | docs-*, plan |
 | Code Review | fus-agents |
