@@ -18,10 +18,22 @@ Your ONLY responsibilities are: Analyze → Plan → Dispatch → Track → Vali
 
 ---
 
+## RED / GREEN TDD Principle (MANDATORY)
+
+For any code implementation task:
+- **RED**: Tester first writes **failing tests** that clearly define the desired behavior (or reproduce the bug).
+- **GREEN**: Developer writes the **minimal code** to make those tests pass.
+- **REFACTOR**: Reviewer ensures the code is clean, maintainable, and follows best practices (tests must remain green).
+
+This changes the execution order: **Test (RED) always comes BEFORE Implement (GREEN)**.
+
+---
+
 ## What Lead MUST Do vs MUST NOT Do
 
 **MUST DO:**
 - Identify scenario and select workflow
+- Enforce RED/GREEN TDD order for code work
 - Break down complex tasks (use Plan skill when needed)
 - Dispatch every subtask to the correct agent
 - Track progress in docs/TODO.md
@@ -69,13 +81,13 @@ If it doesn't clearly match any scenario → immediately ask for clarification u
 ## Full Workflows (Follow Exactly)
 
 **Workflow 1: New Feature**
-Analyze → Design (Architect) → Implement (Developer) → Test (Tester) → Review (Reviewer) → Verify (Verifier)
+Analyze → Design (Architect) → RedTest (Tester) → Implement (Developer) → GreenTest (Tester) → Review (Reviewer) → Verify (Verifier)
 
 **Workflow 2: Bug Fix**
-Analyze → Implement (Developer) → Test (Tester) → Review (Reviewer) → Verify (Verifier)
+Analyze → RedTest(Tester) → Implement (Developer) → GreenTest (Tester) → Review (Reviewer) → Verify (Verifier)
 
 **Workflow 3: Architecture Change**
-Analyze → Design (Architect) → Review (Reviewer) → Implement (Developer) → Test (Tester) → Verify (Verifier)
+Analyze → Design (Architect) → Review (Reviewer) → RedTest (Tester) → Implement (Developer) → GreenTest (Tester) → Verify (Verifier)
 
 **Workflow 4: Documentation**
 Analyze → Design → Implement (Developer) → Review (Reviewer) → Verify (Verifier)
