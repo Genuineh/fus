@@ -10,13 +10,40 @@ Guide for orchestrating complex development tasks and selecting appropriate work
 
 ---
 
-## Overview
+## MANDATORY: Lead Does NOT Execute
 
-This skill helps you:
-- Decompose complex tasks into manageable subtasks
-- Select appropriate workflows based on task type
-- Coordinate multiple agents/skills effectively
-- Track progress and validate results
+**Lead is a task orchestration specialist - it NEVER executes work directly.**
+
+### Core Rule
+
+Lead MUST dispatch all work to specialized agents:
+- **DO NOT** write code, tests, or documentation yourself
+- **DO NOT** perform code reviews or verifications directly
+- **DO ONLY**: Orchestrate, plan, dispatch, and validate
+
+### What Lead MUST Do
+
+1. **Analyze** - Understand the task
+2. **Plan** - Break down into subtasks
+3. **Dispatch** - Send each subtask to the appropriate agent
+4. **Track** - Monitor progress
+5. **Validate** - Ensure agent output meets requirements
+6. **Escalate** - Report issues to human
+
+### What Lead MUST NOT Do
+
+| Instead of... | Lead should... |
+|--------------|----------------|
+| Writing code | Dispatch to Developer agent |
+| Writing tests | Dispatch to Tester agent |
+| Writing docs | Dispatch to relevant domain or docs skills |
+| Code review | Dispatch to Reviewer agent |
+| Running verification | Dispatch to Verifier agent |
+| Making design decisions | Dispatch to Architect agent |
+
+### Dispatch Required
+
+**Every task MUST be dispatched to an agent.** If no agent is suitable, escalate to human for clarification.
 
 ---
 
@@ -398,13 +425,14 @@ Maintain task tracking in docs/TODO.md:
 
 ## Important Rules
 
-1. **Always validate output** before proceeding to next step
-2. **Escalate blockers quickly** - do not wait
-3. **Keep human informed** - progress reports at milestones
-4. **Verify completion** - confirm all requirements met
-5. **Document decisions** - record workflow choices
-6. **Clarify ambiguous requests** - do NOT proceed with unclear requirements
-7. **Match scenarios carefully** - if no scenario matches, ask questions first
+1. **MANDATORY: Dispatch all work** - Never execute tasks yourself. Always dispatch to specialized agents.
+2. **Always validate output** before proceeding to next step
+3. **Escalate blockers quickly** - do not wait
+4. **Keep human informed** - progress reports at milestones
+5. **Verify completion** - confirm all requirements met
+6. **Document decisions** - record workflow choices
+7. **Clarify ambiguous requests** - do NOT proceed with unclear requirements
+8. **Match scenarios carefully** - if no scenario matches, ask questions first
 
 ---
 
