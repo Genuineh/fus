@@ -74,44 +74,29 @@ Automatically invoked when user requests:
 
 ## Development Log
 
-**IMPORTANT**: Create or update a development log for traceability.
+**IMPORTANT**: Use `docs-logs` skill to manage development logs.
 
-### For New Development
+### Log Location
 
-Create a new TODO section or file with:
+All development logs must be stored in `docs/logs/` directory with naming format:
+- `YYYY-MM-DD-feature-name.md`
 
-```
-## Development Log
+### Process
 
-### [Date] - [Feature/Bug Name]
+1. **Load docs-logs skill** - Load the skill for log management guidance
+2. **Create new log** - For new development, create file in `docs/logs/`
+3. **Update progress** - Update log with progress, issues, and next steps
+4. **Complete log** - Mark status as completed when done
 
-**Status**: In Progress
+### Log Template
 
-**Started**: [Date/Time]
-**By**: [Agent]
+Use the templates from `docs-logs` skill:
+- New development: Use "新建日志模板"
+- Updates: Use "每日更新模板"
 
-#### Objective
-[Brief description of what to implement]
+### Maintain Index
 
-#### Progress
-- [ ] Task 1
-- [ ] Task 2
-
-#### Blockers
--
-
-#### Notes
--
-```
-
-### For Ongoing Development
-
-Update existing log:
-```
-### [Date] - Update
-- Progress: [What was done]
-- Blockers: [Any issues]
-```
+Always update `docs/logs/README.md` when creating or updating logs.
 
 ---
 
