@@ -110,8 +110,14 @@ Identify Scenario
      ↓
 Select Workflow
      ↓
-Execute Tasks
+Dispatch to Agent ← Lead dispatches, does NOT execute
+     ↓
+Validate Output ← Lead validates agent results
+     ↓
+Complete or Next Step
 ```
+
+**Note:** "Execute Tasks" means dispatching to specialized agents - Lead NEVER executes work directly.
 
 ---
 
