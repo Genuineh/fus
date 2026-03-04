@@ -43,10 +43,24 @@ Fus skills can be used within agents. The agents are already configured to load 
 - Each skill is a separate `.md` file in `skills/[category]/` directories
 - Agents load skills based on task type (see Skills to Load tables in each agent)
 
-To reference skills in your project:
+#### Option 1: Copy to Project
 ```bash
-# Copy skills for reference
-cp -r skills/ your-project/skills/
+# Copy skills to project .claude directory
+mkdir -p .claude
+cp -r skills/ .claude/
+```
+
+#### Option 2: Copy to User Profile
+```bash
+# Copy skills to user Claude directory
+mkdir -p ~/.claude
+cp -r skills/ ~/.claude/
+```
+
+#### Option 3: Clone Repository
+```bash
+# Clone to user profile
+git clone https://github.com/Genuineh/fus.git ~/.claude/fus
 ```
 
 ## Verification
