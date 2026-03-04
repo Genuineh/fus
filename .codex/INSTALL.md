@@ -143,22 +143,27 @@ ln -sf ~/.codex/fus/codex-agents/ ~/.codex/
 
 | Agent | Description |
 |-------|-------------|
-| `lead` | Task orchestration, workflow management |
 | `architect` | Architecture analysis, technical decisions |
 | `developer` | Code implementation |
 | `reviewer` | Code quality and security review |
 | `tester` | Test writing and coverage |
 | `verifier` | Quality verification |
 
+**Note:** Task orchestration is handled by the main thread using `fus-lead` skill, not by a separate agent.
+
 ### Usage
 
-After configuration, you can spawn agents in multi-agent mode:
+For task orchestration, use the main thread with fus-lead skill:
 
 ```
-@lead Design and implement a user authentication system
+Load fus-lead skill, then design and implement a user authentication system
 ```
 
-The lead agent will coordinate other agents (architect, developer, tester, reviewer, verifier) as needed.
+To spawn specific agents directly:
+
+```
+@architect Design the authentication system
+```
 
 ### Updating
 

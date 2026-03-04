@@ -2,12 +2,10 @@
 multi_agent = true
 
 [agents]
-max_threads = 6
+max_threads = 5
 max_depth = 1
 
-[agents.lead]
-description = "Task orchestration specialist. Coordinates development tasks, decomposes complex tasks, and guides through workflows."
-config_file = "codex-agents/lead.toml"
+# Note: Use fus-lead skill for task orchestration (handled by main thread)
 
 [agents.architect]
 description = "Architecture expert. Analyzes system architecture, designs solutions, and makes technical decisions."
