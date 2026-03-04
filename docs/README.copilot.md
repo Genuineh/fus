@@ -1,6 +1,6 @@
 # Fus for VSCode Copilot
 
-This document provides detailed instructions for installing and using Fus custom agents in VSCode Copilot.
+This document provides detailed instructions for installing and using Fus custom agents and skills in VSCode Copilot.
 
 ## Installation
 
@@ -11,13 +11,13 @@ Tell Copilot to install fus agents:
 1. **Copy agents to workspace:**
    ```bash
    mkdir -p .github/agents
-   cp copilot-agents/*.md .github/agents/
+   cp -r copilot-agents/*.md .github/agents/
    ```
 
 2. **Or copy to user profile:**
    ```bash
    mkdir -p ~/.copilot/agents
-   cp copilot-agents/*.md ~/.copilot/agents/
+   cp -r copilot-agents/*.md ~/.copilot/agents/
    ```
 
 ### Option 2: Clone and Use
@@ -34,6 +34,20 @@ ln -sf ~/.copilot/fus/copilot-agents/*.md ~/.copilot/agents/
 ```
 
 Then restart VSCode.
+
+### Skills Installation
+
+Fus skills can be used within agents. The agents are already configured to load relevant skills automatically. For reference:
+
+- Skills are defined in `skills/` directory
+- Each skill is a separate `.md` file in `skills/[category]/` directories
+- Agents load skills based on task type (see Skills to Load tables in each agent)
+
+To reference skills in your project:
+```bash
+# Copy skills for reference
+cp -r skills/ your-project/skills/
+```
 
 ## Verification
 
@@ -205,6 +219,7 @@ Fus agents include detailed instructions in their definitions. These cover:
 
 - Core responsibilities
 - When to use each agent
+- Skills to Load (which skills to use for different task types)
 - Input/output specifications
 - Boundaries (what agents cannot do)
 - Best practices
@@ -217,17 +232,17 @@ Fus agents include detailed instructions in their definitions. These cover:
 cd ~/.copilot/fus && git pull
 
 # If using copy, re-copy
-cp agents/*.agent.md ~/.copilot/agents/
+cp -r copilot-agents/*.md ~/.copilot/agents/
 ```
 
 ## Uninstalling
 
 ```bash
 # Remove workspace agents
-rm -rf .github/agents/*.md
+rm -rf .github/agents/
 
 # Or remove user agents
-rm -rf ~/.copilot/agents/*.md
+rm -rf ~/.copilot/agents/
 rm -rf ~/.copilot/fus
 ```
 
@@ -235,9 +250,9 @@ rm -rf ~/.copilot/fus
 
 ### Agents not appearing
 
-1. Verify `.agent.md` files in correct location
+1. Verify `.md` files in correct location (.github/agents/ or ~/.copilot/agents/)
 2. Restart VSCode completely
-3. Check file naming: must end with `.agent.md`
+3. Check file naming: must end with `.md`
 4. Verify YAML frontmatter is valid
 
 ### Handoffs not working
@@ -256,8 +271,8 @@ Custom agents have access to:
 
 | Feature | Copilot | Claude Code/Codex |
 |---------|---------|-------------------|
-| Agents | Custom agents (.agent.md) | Skills system |
-| Skills | Embedded in agents | Separate skill files |
+| Agents | Custom agents (.md in .github/agents/) | Skills system |
+| Skills | Embedded in agents | Separate skill files in skills/ |
 | Invocation | @agent or /agents | /skill-name |
 | Configuration | .github/agents/ | skills/ directory |
 
