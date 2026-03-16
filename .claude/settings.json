@@ -1,5 +1,6 @@
 {
   "enabledPlugins": {
-    "fus@fus": true
+    "fus@fus": true,
+    "pua@pua-skills": true
   }
 }

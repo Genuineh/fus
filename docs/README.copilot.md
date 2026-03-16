@@ -106,12 +106,7 @@ Code review agent.
 **When to use:**
 - Need code review
 - Security audit
-- Quality assessment
-
-**Handoffs:**
-- → verifier (for validation)
-
-### tester
+- Quality assessment + verification
 
 Test writing agent.
 
@@ -121,16 +116,7 @@ Test writing agent.
 - Creating e2e tests
 
 **Handoffs:**
-- → reviewer (for review)
-
-### verifier
-
-Verification agent.
-
-**When to use:**
-- Final validation
-- Checking completeness
-- Acceptance testing
+- → reviewer (for review + verification)
 
 ## Usage
 
@@ -151,7 +137,7 @@ I need to implement a user authentication system with React and Node.js
 After an agent completes their work, use the handoff buttons to smoothly transition to the next agent:
 
 ```
-architect → developer → tester → reviewer → verifier
+architect → developer → tester → reviewer → Complete
 ```
 
 ### Direct Agent Invocation
@@ -185,9 +171,7 @@ You can also invoke specific agents directly:
 
 4. **tester** writes tests, handoff to **reviewer**
 
-5. **reviewer** reviews, handoff to **verifier**
-
-6. **verifier** confirms completion
+5. **reviewer** reviews + verifies, task complete
 
 ### Bug Fix
 
@@ -198,9 +182,9 @@ You can also invoke specific agents directly:
 
 2. **developer** fixes, handoff to **tester**
 
-3. **tester** verifies fix, handoff to **verifier**
+3. **tester** verifies fix, handoff to **reviewer**
 
-4. **verifier** confirms fix
+4. **reviewer** reviews + verifies, task complete
 
 ### Code Review
 

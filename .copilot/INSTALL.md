@@ -57,9 +57,8 @@ After installation, the following agents will be available in Copilot:
 |-------|-------------|
 | `architect` | Architecture analysis, technical decisions |
 | `developer` | Code implementation |
-| `reviewer` | Code quality and security review |
+| `reviewer` | Code review + verification |
 | `tester` | Test writing and coverage |
-| `verifier` | Quality verification |
 
 ## Usage
 
@@ -79,7 +78,7 @@ After installation, the following agents will be available in Copilot:
 Fus agents are configured with handoffs for workflow:
 
 ```
-architect → developer → tester → reviewer → verifier
+architect → developer → tester → reviewer → Complete
 ```
 
 Note: Task orchestration (Lead) is handled by fus-lead skill in Claude Code, not in Copilot custom agents.

@@ -145,9 +145,8 @@ ln -sf ~/.codex/fus/codex-agents/ ~/.codex/
 |-------|-------------|
 | `architect` | Architecture analysis, technical decisions |
 | `developer` | Code implementation |
-| `reviewer` | Code quality and security review |
+| `reviewer` | Code review + verification |
 | `tester` | Test writing and coverage |
-| `verifier` | Quality verification |
 
 **Note:** Task orchestration is handled by the main thread using `fus-lead` skill, not by a separate agent.
 

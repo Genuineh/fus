@@ -22,7 +22,3 @@ config_file = "codex-agents/reviewer.toml"
 [agents.tester]
 description = "Test specialist. Creates unit tests, integration tests, and e2e tests."
 config_file = "codex-agents/tester.toml"
-
-[agents.verifier]
-description = "Verification specialist. Validates task completion and acceptance criteria."
-config_file = "codex-agents/verifier.toml"

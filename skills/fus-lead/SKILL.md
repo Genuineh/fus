@@ -1,6 +1,6 @@
 ---
 name: fus-lead
-description: MANDATORY - Task Orchestration Lead. When this skill is loaded, you MUST identify the scenario, select the correct workflow, dispatch ALL work to specialized agents (Architect, Developer, Tester, Reviewer, Verifier), track progress, and validate results. You NEVER execute any work yourself.
+description: MANDATORY - Task Orchestration Lead. When this skill is loaded, you MUST identify the scenario, select the correct workflow, dispatch ALL work to specialized agents (Architect, Developer, Tester, Reviewer), track progress, and validate results. You NEVER execute any work yourself.
 version: 1.2.0
 ---
 
@@ -143,28 +143,28 @@ If it doesn't clearly match any scenario → immediately ask for clarification u
 3. **TestPlan**    – Create test pseudo-code (Tester) → **Human Approval Required**
 4. **RedTest**     – Write failing tests (Tester) with approved test plan
 5. **GreenImplement** – Implement code to pass tests (Developer)
-6. **Review**      – Peer code/design review (Reviewer)
-7. **Verify**      – Final validation against requirements (Verifier)
+6. **ReviewVerify** – Code review + Final validation (Reviewer)
+7. **Complete**    – Task complete
 
-Note: Human approval required at Design and TestPlan phases before proceeding.
+Note: Human approval required at Design and TestPlan phases before proceeding. Reviewer now includes verification responsibilities.
 ---
 
 ## Full Workflows (Follow Exactly)
 
 **Workflow 1: New Feature**
-Analyze → Design (Architect) → **[Human Approval]** → TestPlan (Tester) → **[Human Approval]** → RedTest (Tester) → GreenImplement (Developer) → Review (Reviewer) → Verify (Verifier)
+Analyze → Design (Architect) → **[Human Approval]** → TestPlan (Tester) → **[Human Approval]** → RedTest (Tester) → GreenImplement (Developer) → ReviewVerify (Reviewer) → Complete
 
 **Workflow 2: Bug Fix**
-Analyze → TestPlan (Tester) → **[Human Approval]** → RedTest (Tester) → GreenImplement (Developer) → Review (Reviewer) → Verify (Verifier)
+Analyze → TestPlan (Tester) → **[Human Approval]** → RedTest (Tester) → GreenImplement (Developer) → ReviewVerify (Reviewer) → Complete
 
 **Workflow 3: Architecture Change**
-Analyze → Design (Architect) → **[Human Approval]** → Review (Reviewer) → TestPlan (Tester) → **[Human Approval]** → RedTest (Tester) → GreenImplement (Developer) → Verify (Verifier)
+Analyze → Design (Architect) → **[Human Approval]** → ReviewVerify (Reviewer) → TestPlan (Tester) → **[Human Approval]** → RedTest (Tester) → GreenImplement (Developer) → Complete
 
 **Workflow 4: Documentation**
-Analyze → Design → Review (Reviewer) → Verify (Verifier)
+Analyze → Design → ReviewVerify (Reviewer) → Complete
 
 **Workflow 5: Code Review**
-Analyze → Review (Reviewer) → Verify (Verifier)
+Analyze → ReviewVerify (Reviewer) → Complete
 
 ---
 
@@ -175,7 +175,7 @@ You MUST use this exact format every time you dispatch:
 ```
 **Dispatching Task to Agent**
 
-Agent: [Architect / Developer / Tester / Reviewer / Verifier]
+Agent: [Architect / Developer / Tester / Reviewer]
 
 Task: [Very clear and specific sub-task]
 
