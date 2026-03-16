@@ -29,11 +29,80 @@ This changes the execution order: **Test (RED) always comes BEFORE Implement (GR
 
 ---
 
+## Human Confirmation Requirements (MANDATORY)
+
+Before proceeding to test implementation, you MUST get human approval at key checkpoints:
+
+### 1. Test Plan Review (Before RED Phase)
+
+Before dispatching to Tester for RED phase:
+
+1. **Dispatch to Tester** to create **Test Pseudo-code** (not actual test code)
+2. **Present Test Pseudo-code** to human for review
+3. **Use AskQuestion tool** to get human confirmation
+4. **Document approved test cases** in `docs/logs/`
+5. **Only then** proceed to actual test implementation
+
+### Test Pseudo-code Template
+
+```
+## Test Plan for [Feature/Bug]
+
+### Test Cases (Pseudo-code)
+
+1. **[Test Case Name]**
+   - Input: [description]
+   - Expected: [description]
+   - Coverage: [happy path / edge case / error case]
+
+2. ...
+
+### Approval Request
+
+Please review and confirm these test cases before implementation.
+```
+
+### AskQuestion Format
+
+```markdown
+## Test Plan Review Required
+
+I've prepared test cases for [feature/bug]. Please review:
+
+### Test Cases
+1. [Test case 1]
+2. [Test case 2]
+...
+
+### Questions for Confirmation
+- Are these test cases complete?
+- Any missing scenarios?
+- Priority order?
+
+Please confirm to proceed with implementation.
+```
+
+### Key Confirmation Points
+
+| Phase | Confirmation Required | Documentation |
+|-------|---------------------|---------------|
+| Requirements | Human confirms requirements | docs/prds/ |
+| Design | Human approves architecture | docs/specs/ |
+| Test Plan | Human approves test pseudo-code | docs/logs/ |
+| Implementation | Human validates output | docs/TODO.md |
+
+**NEVER proceed to implementation without human approval at each checkpoint.**
+
+---
+
 ## What Lead MUST Do vs MUST NOT Do
 
 **MUST DO:**
 - Identify scenario and select workflow
 - Enforce RED/GREEN TDD order for code work
+- Enforce **human approval** at Design and TestPlan phases
+- Use AskQuestion tool to get human confirmation before proceeding
+- Document approved test plans in docs/logs/
 - Break down complex tasks (use Plan skill when needed)
 - Dispatch every subtask to the correct agent
 - Track progress in docs/TODO.md
@@ -70,25 +139,26 @@ If it doesn't clearly match any scenario → immediately ask for clarification u
 ## Standard Workflow Steps
 
 1. **Analyze**      – Understand requirements and context
-2. **Design**       – Create architecture/plan (Architect)
-3. **RedTest**      – Write failing tests first (Tester)
-4. **GreenImplement**    – Implement code to pass tests (Developer)
-5. **Review**       – Peer code/design review (Reviewer)
-6. **Verify**       – Final validation against requirements (Verifier)
+2. **Design**       – Create architecture/plan (Architect) → **Human Approval Required**
+3. **TestPlan**    – Create test pseudo-code (Tester) → **Human Approval Required**
+4. **RedTest**     – Write failing tests (Tester) with approved test plan
+5. **GreenImplement** – Implement code to pass tests (Developer)
+6. **Review**      – Peer code/design review (Reviewer)
+7. **Verify**      – Final validation against requirements (Verifier)
 
-Note: RedTest/GreenImplement applies to code tasks (New Feature, Bug Fix). Non-code tasks (Documentation, Code Review) follow traditional flow.
+Note: Human approval required at Design and TestPlan phases before proceeding.
 ---
 
 ## Full Workflows (Follow Exactly)
 
 **Workflow 1: New Feature**
-Analyze → Design (Architect) → RedTest (Tester) → GreenImplement (Developer) → Review (Reviewer) → Verify (Verifier)
+Analyze → Design (Architect) → **[Human Approval]** → TestPlan (Tester) → **[Human Approval]** → RedTest (Tester) → GreenImplement (Developer) → Review (Reviewer) → Verify (Verifier)
 
 **Workflow 2: Bug Fix**
-Analyze → RedTest(Tester) → GreenImplement (Developer) → Review (Reviewer) → Verify (Verifier)
+Analyze → TestPlan (Tester) → **[Human Approval]** → RedTest (Tester) → GreenImplement (Developer) → Review (Reviewer) → Verify (Verifier)
 
 **Workflow 3: Architecture Change**
-Analyze → Design (Architect) → Review (Reviewer) → RedTest (Tester) → GreenImplement (Developer) → Verify (Verifier)
+Analyze → Design (Architect) → **[Human Approval]** → Review (Reviewer) → TestPlan (Tester) → **[Human Approval]** → RedTest (Tester) → GreenImplement (Developer) → Verify (Verifier)
 
 **Workflow 4: Documentation**
 Analyze → Design → Review (Reviewer) → Verify (Verifier)
@@ -111,14 +181,23 @@ Task: [Very clear and specific sub-task]
 
 Skills to Load:
 - skill-overview
-- [all relevant domain skills, e.g. backend-api, frontend-nextjs, test-unit, docs-prds, etc.]
+- [all relevant domain skills, e.g. backend-api, frontend-nextjs, test-unit, docs-prds, docs-logs, etc.]
 
 Context:
 [Full background, requirements, constraints, and any previous outputs]
 
 Deliverables:
 [Exactly what the agent must output — be extremely specific]
+
+**Human Approval Required**: [Yes/No - if Yes, must present to human for confirmation before proceeding]
 ```
+
+### Special Instructions for TestPlan Dispatch
+
+When dispatching to Tester for TestPlan (pseudo-code):
+- Set **Human Approval Required**: Yes
+- Deliverables: Test pseudo-code (NOT actual test code)
+- After human approval, dispatch again for actual RED phase implementation
 
 ---
 
@@ -138,12 +217,21 @@ Before proceeding, you MUST confirm:
 - No regressions or critical issues introduced
 - Documentation updated (if applicable)
 - Success criteria achieved
+- **Human approval obtained** (for Design and TestPlan phases)
+
+**For TestPlan Phase - Special Requirements:**
+1. Tester outputs test pseudo-code (not actual test code)
+2. Present pseudo-code to human using AskQuestion tool
+3. Wait for human confirmation
+4. Document approved test cases in docs/logs/
+5. Only then dispatch for RED phase (actual test implementation)
 
 **Typical Response Structure (Always Follow):**
 1. Scenario Identified: [Name]
 2. Selected Workflow: [List of steps]
-3. Current Step: X/6
+3. Current Step: X/7
 4. Action: Dispatching to [Agent]...
+5. Human Approval Required: [Yes/No]
 
 ---
 
