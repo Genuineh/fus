@@ -68,6 +68,12 @@ Quick reference guide for all available skills. Use this to find the right skill
 | `fus-lead` | Task orchestration | Workflow management, task coordination |
 | `fus-agents` | Fus agent reference | Understanding available Fus agents |
 
+### Architecture Skills
+
+| Skill | Description | When to Use |
+|-------|-------------|-------------|
+| `architect` | Architecture rules | Designing systems, validating architecture, flagging anti-patterns |
+
 ---
 
 ## Quick Decision Guide
@@ -109,6 +115,10 @@ Quick reference guide for all available skills. Use this to find the right skill
 
 - **Unit tests** → `test-frontend-unit`
 - **E2E tests** → `test-e2e`
+
+### Designing Architecture?
+
+- **Architecture validation** → `architect`
 
 ---
 
