@@ -1,10 +1,6 @@
-# Claude Code Project Guidance
+# Repository Guidelines
 
-This file provides the Claude Code entry-point version of the repository rules. Keep it aligned with `AGENTS.md`. If these files diverge, the project guidance is broken and should be reconciled immediately.
-
-## Repository Guidelines
-
-### Project Structure
+## Project Structure
 
 This repository is documentation-first.
 
@@ -32,7 +28,7 @@ If any document moves, add or update links in the same change, including `README
 
 All subdirectories under `docs/` should use lowercase names.
 
-### Archive Rules
+## Archive Rules
 
 - Archive documents when they are superseded, completed and no longer active, structurally outdated, or kept only for history.
 - Archive does not mean delete. Preserve the file, move it to `docs/archive/`, and keep the filename descriptive.
@@ -54,7 +50,7 @@ Archive timing:
 - When a guide, draft, or note no longer matches the current repository structure.
 - During major restructures, before stale docs can confuse active contributors.
 
-### Development Workflow
+## Development Workflow
 
 Use these checks before and after edits:
 
@@ -82,16 +78,16 @@ Once the dotnet workspace exists, use:
 
 When a task is completed or meaningfully advanced, update `docs/TODO.md` in the same change. Mark progress explicitly so the TODO reflects current status, not just planned work.
 
-### Skills
+## Skills
 
-#### Rule
+### Rule
 
 - At the start of every task, identify the task type and load the matching skill guidance before making substantive changes.
 - Use `read_file` to load the relevant skill file from `.claude/skills/` when the task falls into one of the categories below.
 - If multiple domains apply, load the small set of directly relevant skills instead of defaulting to one broad skill.
 - If no exact skill matches, load the nearest general skill for that area and proceed with the repo rules in this file.
 
-#### Skill Directory
+### Skill Directory
 
 - Documentation:
   - `docs-general`: documentation structure, archive rules, and doc hygiene
@@ -131,7 +127,7 @@ When a task is completed or meaningfully advanced, update `docs/TODO.md` in the 
 - Planning and orchestration:
   - `plan`: task decomposition and execution planning
 
-#### Task Routing
+### Task Routing
 
 - Documentation tasks should load the matching `docs-*` skill first.
 - Backend implementation or API changes should load the most specific `backend-*` skill plus `backend-principles` when architectural guidance matters.
@@ -144,7 +140,7 @@ When a task is completed or meaningfully advanced, update `docs/TODO.md` in the 
 - Planning and orchestration tasks should load `plan`.
 - Testing tasks should load `tester` plus the relevant frontend/backend skill when applicable.
 
-### Style Rules
+## Style Rules
 
 - Keep docs short, direct, and actionable.
 - Use stable filenames and predictable structure.
@@ -152,7 +148,7 @@ When a task is completed or meaningfully advanced, update `docs/TODO.md` in the 
 - For Tauri, use `npm run build`, `npm run test`, and `npm run tauri dev`.
 - Prefer explicit names such as `BlockContract`, `ExecutionResult`, and other contract-shaped identifiers.
 
-### Design Principles
+## Design Principles
 
 - Start with the smallest viable engineering slice, then iterate upward.
 - Small scope is not an excuse for weak design. Every iteration must preserve or improve architecture.
@@ -160,7 +156,7 @@ When a task is completed or meaningfully advanced, update `docs/TODO.md` in the 
 - Prefer simpler structure over extra abstraction. Reduce special cases, keep contracts consistent, and keep the runtime thin.
 - Make incremental changes that stay safe under existing tests.
 
-### Testing Rules
+## Testing Rules
 
 - Testing is a core part of development, not a final cleanup step.
 - Default workflow is red/green TDD:
@@ -172,7 +168,7 @@ When a task is completed or meaningfully advanced, update `docs/TODO.md` in the 
 - When code exists, keep unit tests near source and integration tests in each crate’s `tests/` directory.
 - Name tests by behavior, for example `validates_required_inputs`.
 
-### Acceptance Standards
+## Acceptance Standards
 
 A change is not done unless it meets this baseline:
 
@@ -185,7 +181,7 @@ A change is not done unless it meets this baseline:
 
 If quality is uncertain, raise the bar instead of relaxing acceptance.
 
-### Commits and Pull Requests
+## Commits and Pull Requests
 
 - Use short, imperative, capitalized commit subjects, for example `Add blocks language whitepaper`.
 - Keep each commit focused on one logical change.
@@ -193,7 +189,7 @@ If quality is uncertain, raise the bar instead of relaxing acceptance.
 - Include screenshots for UI changes.
 - If priorities change, update `docs/TODO.md` in the same PR.
 
-### Must Follow
+## Must Follow
 
 - Follow the documentation structure and hygiene rules.
 - Use skills for every task.

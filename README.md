@@ -23,6 +23,15 @@ fus/
 └── docs/                    # Documentation
 ```
 
+## Documentation
+
+- [Codex Guide](./docs/README.codex.md)
+- [Copilot Guide](./docs/README.copilot.md)
+- [Fus CLI Usage](./docs/guide/fus-cli-usage.md)
+- [AGENTS.md / CLAUDE.md Guidance](./docs/guide/agent-system-guidance.md)
+- [AGENTS.md](./AGENTS.md)
+- [CLAUDE.md](./CLAUDE.md)
+
 ## Quick Install
 
 ### For Claude Code
@@ -98,6 +107,10 @@ Fus provides 28+ skills for full-stack development:
 - **Testing (test-*)**: test-frontend-unit, test-e2e
 - **Project (project-*)**: project-rust
 - **Product (product-*)**: product-principles, product-ux
+
+## Project Guidance
+
+If you use Fus in another repository, keep project-level agent instructions in `AGENTS.md` and/or `CLAUDE.md`, and keep them aligned with the detailed guidance in [docs/guide/agent-system-guidance.md](./docs/guide/agent-system-guidance.md).
 
 ## Fus CLI
 

@@ -22,6 +22,8 @@ Claude Code 通用开发工具集插件项目
 - [ ] 实现配置驱动的功能扩展
 - [ ] 添加 E2E 测试
 - [ ] 完善文档
+- [x] 增加 AGENTS.md / CLAUDE.md 通用指导
+- [x] 生成 AGENTS.md / CLAUDE.md 推荐模板
 
 ---
 
@@ -54,3 +56,5 @@ Claude Code 通用开发工具集插件项目
 | 2026-03-02 | 实现 install/list/uninstall 命令 | ✅ |
 | 2026-03-02 | 实现 update 命令 | ✅ |
 | 2026-03-02 | 添加CLI使用文档 | ✅ |
+| 2026-03-19 | 增加 AGENTS.md / CLAUDE.md 通用指导文档 | ✅ |
+| 2026-03-19 | 生成 AGENTS.md / CLAUDE.md 推荐模板 | ✅ |
