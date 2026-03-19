@@ -42,6 +42,7 @@ You should see fus skills listed:
 - `docs-*` - Documentation skills
 - `backend-*` - Backend skills
 - `frontend-*` - Frontend skills
+- `design-*` - Design system and visual language skills
 - `test-*` - Testing skills
 
 ## Usage
@@ -112,6 +113,12 @@ I need to build a user authentication system with React and Node.js
 | `frontend-styling-twind` | Tailwind CSS |
 | `frontend-api-integration` | API integration |
 | `frontend-design` | UI/UX design |
+
+### Design Skills
+
+| Skill | Description |
+|-------|-------------|
+| `design-foundations` | Aesthetics, mathematical proportion, and color systems |
 
 ### Testing Skills
 

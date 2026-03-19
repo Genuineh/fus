@@ -47,6 +47,12 @@ Quick reference guide for all available skills. Use this to find the right skill
 | `frontend-api-integration` | API integration | React Query, type-safe requests |
 | `frontend-design` | Design excellence | UI/UX design, aesthetics |
 
+### Design Skills (design-*)
+
+| Skill | Description | When to Use |
+|-------|-------------|-------------|
+| `design-foundations` | Aesthetic, proportion, and color systems | Defining visual language, palette logic, and composition rules |
+
 ### Testing Skills (test-*)
 
 | Skill | Description | When to Use |
@@ -119,6 +125,10 @@ Quick reference guide for all available skills. Use this to find the right skill
 - **Styling** → `frontend-styling-twind`
 - **API calls** → `frontend-api-integration`
 - **UI/UX design** → `frontend-design`
+
+### Shaping Visual Language?
+
+- **Aesthetics + proportion + color systems** → `design-foundations`
 
 ### Testing Frontend?
 

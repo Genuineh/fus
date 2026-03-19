@@ -24,6 +24,8 @@ Claude Code 通用开发工具集插件项目
 - [ ] 完善文档
 - [x] 增加 AGENTS.md / CLAUDE.md 通用指导
 - [x] 生成 AGENTS.md / CLAUDE.md 推荐模板
+- [x] 增加 design-foundations 设计原则 skill
+- [x] 优化 design-foundations skill 为英文设计工程版本
 
 ---
 
@@ -58,3 +60,5 @@ Claude Code 通用开发工具集插件项目
 | 2026-03-02 | 添加CLI使用文档 | ✅ |
 | 2026-03-19 | 增加 AGENTS.md / CLAUDE.md 通用指导文档 | ✅ |
 | 2026-03-19 | 生成 AGENTS.md / CLAUDE.md 推荐模板 | ✅ |
+| 2026-03-19 | 增加 design-foundations 设计原则 skill | ✅ |
+| 2026-03-19 | 优化 design-foundations skill 为英文设计工程版本 | ✅ |

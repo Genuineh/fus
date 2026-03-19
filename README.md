@@ -17,7 +17,7 @@ fus/
 ├── copilot-agents/           # Copilot custom agents (.md)
 ├── agents/                   # Agent reference docs (for skills)
 ├── commands/                 # CLI commands
-├── skills/                  # Skill definitions (28+ skills)
+├── skills/                  # Skill definitions (30+ skills)
 ├── packages/
 │   └── fus-cli/            # Plugin management CLI
 └── docs/                    # Documentation
@@ -89,7 +89,7 @@ Fetch and follow instructions from https://raw.githubusercontent.com/Genuineh/fu
 
 ## Fus Plugin
 
-Fus provides 28+ skills for full-stack development:
+Fus provides 30+ skills for full-stack development:
 
 ### Core Skills
 
@@ -104,6 +104,7 @@ Fus provides 28+ skills for full-stack development:
 - **Documentation (docs-*)**: docs-general, docs-todo, docs-prds, docs-specs, docs-guide, docs-adr
 - **Backend (backend-*)**: backend-principles, backend-database, backend-microservices, backend-queue, backend-api, backend-cache, backend-rust
 - **Frontend (frontend-*)**: frontend-general-principles, frontend-tauri-native, frontend-framework-nextjs, frontend-state-management, frontend-styling-twind, frontend-api-integration, frontend-design
+- **Design (design-*)**: design-foundations
 - **Testing (test-*)**: test-frontend-unit, test-e2e
 - **Project (project-*)**: project-rust
 - **Product (product-*)**: product-principles, product-ux

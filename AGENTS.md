@@ -112,6 +112,8 @@ When a task is completed or meaningfully advanced, update `docs/TODO.md` in the 
   - `frontend-styling-twind`: Twind or Tailwind styling patterns
   - `frontend-api-integration`: frontend data fetching and API integration
   - `frontend-design`: UI quality, interaction, and visual design
+- Design:
+  - `design-foundations`: aesthetic, mathematical proportion, and color-system guidance for software design
 - Testing:
   - `tester`: general testing principles
   - `test-frontend-unit`: frontend unit and component tests
@@ -132,6 +134,7 @@ When a task is completed or meaningfully advanced, update `docs/TODO.md` in the 
 - Documentation tasks should load the matching `docs-*` skill first.
 - Backend implementation or API changes should load the most specific `backend-*` skill plus `backend-principles` when architectural guidance matters.
 - Frontend work should load the relevant `frontend-*` skill, and visual or UX-heavy tasks should also load `frontend-design`.
+- Design-system, visual-language, or palette/proportion work should load `design-foundations`, optionally alongside `frontend-design` or `product-ux`.
 - Frontend testing should load the matching `test-*` skill before writing or changing tests.
 - Rust workspace or package-structure work should load `project-rust`.
 - Architecture analysis or design tasks should load `architect`.
