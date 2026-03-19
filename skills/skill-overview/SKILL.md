@@ -67,6 +67,9 @@ Quick reference guide for all available skills. Use this to find the right skill
 | `plan` | Task planning | Decomposing tasks, planning |
 | `fus-lead` | Task orchestration | Workflow management, task coordination |
 | `fus-agents` | Fus agent reference | Understanding available Fus agents |
+| `developer` | Development standard | Principles and execution rules for implementation work |
+| `tester` | Testing standard | Principles and execution rules for automated testing |
+| `review` | Review standard | Principles and execution rules for reviewing code changes |
 
 ### Architecture Skills
 
@@ -90,6 +93,12 @@ Quick reference guide for all available skills. Use this to find the right skill
 ### Managing Projects?
 
 - **Rust project** → `project-rust`
+
+### Delivering Work?
+
+- **Implement a clear requirement** → `developer`
+- **Add or repair automated tests** → `tester`
+- **Review a diff or finished task** → `review`
 
 ### Building Backend?
 
