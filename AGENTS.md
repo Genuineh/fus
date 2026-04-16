@@ -87,6 +87,8 @@ When a task is completed or meaningfully advanced, update `docs/TODO.md` in the 
 
 ### Skill Directory
 
+- Coding:
+  - `code-rule`: surgical coding principles (MANDATORY for all coding tasks)
 - Documentation:
   - `docs-general`: documentation structure, archive rules, and doc hygiene
   - `docs-todo`: `docs/TODO.md` updates and task tracking
@@ -129,6 +131,7 @@ When a task is completed or meaningfully advanced, update `docs/TODO.md` in the 
 
 ### Task Routing
 
+- **ALL coding tasks must load `code-rule` FIRST, before any other skill.**
 - Documentation tasks should load the matching `docs-*` skill first.
 - Backend implementation or API changes should load the most specific `backend-*` skill plus `backend-principles` when architectural guidance matters.
 - Frontend work should load the relevant `frontend-*` skill, and visual or UX-heavy tasks should also load `frontend-design`.
@@ -140,6 +143,7 @@ When a task is completed or meaningfully advanced, update `docs/TODO.md` in the 
 - Review tasks should load `review`.
 - Planning and orchestration tasks should load `plan`.
 - Testing tasks should load `tester` plus the relevant frontend/backend skill when applicable.
+- Coding tasks must load `code-rule` plus the most specific domain skill.
 
 ## Style Rules
 
